@@ -1,0 +1,25 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "rss_monitor",
+    "name": "RSS and Atom Monitor",
+    "version": "1.0.0",
+    "adapter": "rss",
+    "description": "Reads operator-approved RSS 2.0 or Atom feeds for fresh topic discovery and source leads.",
+    "capabilities": ["topic_discovery", "research_leads"],
+    "auth": { "type": "none", "env": [] },
+    "default_source_tier": 3,
+    "default_source_type": "feed_synopsis",
+    "default_config": {
+      "feed_urls": [],
+      "allowed_hosts": [],
+      "max_items_per_feed": 20
+    },
+    "limits": { "max_items": 100, "timeout_ms": 15000, "attempts": 2, "max_bytes": 2000000 },
+    "trust": {
+      "can_satisfy_primary_source": false,
+      "content_completeness": "synopsis",
+      "notes": "Feed descriptions are discovery leads. Full source review is still required for factual claims."
+    }
+  }
+}

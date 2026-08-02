@@ -1,0 +1,26 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "allowlisted_web_document",
+    "name": "Allowlisted Web Document",
+    "version": "1.0.0",
+    "adapter": "web_document",
+    "description": "Retrieves text from explicitly allowlisted HTTPS pages for official reports, museum records, standards, and documentation.",
+    "capabilities": ["research_sources"],
+    "auth": { "type": "optional_headers", "env": [] },
+    "default_source_tier": 2,
+    "default_source_type": "official_web_document",
+    "default_config": {
+      "urls": [],
+      "allowed_hosts": [],
+      "source_tier": 2,
+      "source_type": "official_web_document"
+    },
+    "limits": { "max_items": 30, "timeout_ms": 15000, "attempts": 2, "max_bytes": 3000000 },
+    "trust": {
+      "can_satisfy_primary_source": true,
+      "content_completeness": "page_text",
+      "notes": "The connector prevents private-network access and requires an explicit hostname allowlist."
+    }
+  }
+}

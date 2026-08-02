@@ -1,0 +1,21 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "curated_packet",
+    "name": "Curated Evidence Packet",
+    "version": "1.0.0",
+    "adapter": "curated_packet",
+    "description": "Normalises operator-supplied source extracts, metadata, licences, dates, and source tiers.",
+    "capabilities": ["research_sources"],
+    "auth": { "type": "none", "env": [] },
+    "default_source_tier": 2,
+    "default_source_type": "operator_curated",
+    "default_config": {},
+    "limits": { "max_items": 100, "timeout_ms": 0, "attempts": 1 },
+    "trust": {
+      "can_satisfy_primary_source": true,
+      "content_completeness": "operator_supplied_extract",
+      "notes": "Primary-source eligibility depends on the operator's metadata and is reported rather than assumed."
+    }
+  }
+}

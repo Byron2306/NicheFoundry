@@ -1,0 +1,8 @@
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/01_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_4d5b2cb2ff01aa7c.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/02_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_2986beda45272a6f.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/03_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_fe3841a35401dda9.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/04_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_3ddb78c52d29644d.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/05_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_1f9795eb2f8cee1b.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/06_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_1ca6234c3d048748.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/07_rosetta-stone-under-glass-2026-08-02-f479e4a4_scene_3ddb78c52d29644d.wav'
+file '/home/byron/Downloads/NicheFoundry_Phase11/assets/voices/elevenlabs_curator/samples/08_rosetta-stone-under-glass-2026-08-02-2e99173e_scene_3ddb78c52d29644d.wav'

@@ -1,0 +1,25 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "github_releases",
+    "name": "GitHub Release Intelligence",
+    "version": "1.0.0",
+    "adapter": "github_releases",
+    "description": "Retrieves official repository metadata and published release notes for version-sensitive open-source research.",
+    "capabilities": ["research_sources", "freshness_evidence", "topic_discovery"],
+    "auth": { "type": "optional_token", "env": ["GITHUB_TOKEN"] },
+    "default_source_tier": 1,
+    "default_source_type": "official_project_record",
+    "default_config": {
+      "repositories": [],
+      "per_page": 10,
+      "api_version": "2026-03-10"
+    },
+    "limits": { "max_items": 50, "timeout_ms": 15000, "attempts": 2 },
+    "trust": {
+      "can_satisfy_primary_source": true,
+      "content_completeness": "official_release_record",
+      "notes": "Repository and release records are primary evidence for versions, dates, and maintainer-published changes."
+    }
+  }
+}

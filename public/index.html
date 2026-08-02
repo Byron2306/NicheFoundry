@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NicheFoundry Phase 11 Publishing and Compliance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">NicheFoundry Phase 11 / Publishing and Compliance</p>
+          <h1>Carry the signed-off programme safely into the world.</h1>
+          <p class="hero-text">
+            Review release metadata, prove audience and synthetic-media declarations, upload privately through a resumable session, verify YouTube processing, attach captions and thumbnails, and keep public release under explicit human control.
+          </p>
+          <div class="hero-actions">
+            <button id="resetButton" class="button button-secondary">Reset Workspace</button>
+          </div>
+          <p id="flash" class="flash" data-error="false"></p>
+        </div>
+        <aside class="hero-panel">
+          <span class="panel-kicker">Current status</span>
+          <strong id="heroStatus">Loading Studio Packs</strong>
+          <p id="heroSummary">The foundry is reading its installed specialist constitutions.</p>
+          <div id="currentStudioBadge" class="studio-badge"></div>
+        </aside>
+      </header>
+
+      <main class="layout">
+        <section class="card card-form">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Stage Zero</p>
+              <h2>Studio and Episode Brief</h2>
+            </div>
+            <span class="pill">Pack-governed</span>
+          </div>
+          <form id="briefForm" class="brief-grid">
+            <input type="hidden" name="opportunity_id" id="opportunityId" />
+            <div class="quickstart-card span-2">
+              <strong>Quick Start</strong>
+              <p>Like the older workflow, the default path should be simple: enter a topic, let the system research, auto-pick the best-fitting studio if needed, draft the episode, then you approve.</p>
+              <div class="hero-actions">
+                <button id="researchYouTubeButton" class="button button-secondary" type="button">Research and Draft Brief</button>
+                <button id="autopilotButton" class="button button-primary" type="button">Research, Draft, and Build Episode</button>
+              </div>
+            </div>
+            <label class="span-2">
+              Topic
+              <input name="topic" required />
+            </label>
+            <details class="advanced-brief span-2">
+              <summary>Advanced Brief Options and Manual Overrides</summary>
+              <div class="brief-grid advanced-brief-grid">
+            <label>
+              Specialist studio
+              <select name="studio_id" id="studioSelect" required></select>
+            </label>
+            <label>
+              Content archetype
+              <select name="archetype_id" id="archetypeSelect" required></select>
+            </label>
+            <label class="span-2">
+              Working title
+              <input name="working_title" />
+            </label>
+            <label class="span-2">
+              Story premise
+              <textarea name="story_premise" rows="3"></textarea>
+            </label>
+            <label>
+              Age band
+              <select name="age_band">
+                <option>5-7</option>
+                <option>8-13</option>
+                <option selected>13+</option>
+              </select>
+            </label>
+            <label>
+              Difficulty
+              <select name="difficulty">
+                <option>easy</option>
+                <option selected>mixed</option>
+                <option>hard</option>
+              </select>
+            </label>
+            <label>
+              Evidence-unit count
+              <input name="question_count" type="number" min="4" max="20" value="6" />
+            </label>
+            <label>
+              Countdown seconds
+              <input name="countdown_seconds" type="number" min="3" max="30" value="8" />
+            </label>
+            <label>
+              Audience mode
+              <select name="audience_mode">
+                <option selected>general_family</option>
+                <option>made_for_kids</option>
+              </select>
+            </label>
+            <label>
+              Target persona
+              <select name="target_persona_id" id="targetPersonaSelect"></select>
+            </label>
+            <label>
+              Primary viewer job
+              <select name="viewer_job" id="viewerJobSelect"></select>
+            </label>
+            <label>
+              Content pillar
+              <select name="content_pillar_id" id="contentPillarSelect"></select>
+            </label>
+            <label>
+              Output format
+              <select name="output_format" id="outputFormatSelect"></select>
+            </label>
+            <label>
+              Target duration minutes
+              <input name="target_duration_minutes" type="number" min="1" max="30" step="0.5" value="8" />
+            </label>
+            <label class="checkbox">
+              <input name="contains_synthetic_media" type="checkbox" />
+              Contains synthetic media
+            </label>
+            <label>
+              Source mode
+              <select name="source_mode">
+                <option selected>wikipedia</option>
+                <option>curated_packet</option>
+              </select>
+            </label>
+            <label class="span-2">
+              Source queries
+              <textarea name="source_queries" rows="3" placeholder="One query per line"></textarea>
+            </label>
+            <label class="span-2">
+              Research connector IDs
+              <input name="research_connector_ids" placeholder="mediawiki_research, curated_packet, github_releases" />
+            </label>
+            <label class="span-2">
+              Connector inputs JSON
+              <textarea name="connector_inputs" rows="6" spellcheck="false" placeholder='{"github_releases":{"repositories":["owner/project"]}}'></textarea>
+            </label>
+            <label class="span-2">
+              Visual direction
+              <textarea name="visual_direction" rows="3" required></textarea>
+            </label>
+              </div>
+            </details>
+            <details class="advanced-brief span-2">
+              <summary>Manual Build Controls</summary>
+              <div class="form-actions manual-build-actions">
+                <button class="button button-secondary" id="checkFitButton" type="button">Check Studio Fit</button>
+                <button class="button button-primary" type="submit">Generate Studio Packet</button>
+              </div>
+            </details>
+          </form>
+        </section>
+
+        <details class="operator-rail">
+          <summary>Context and History</summary>
+          <section class="stack">
+          <article class="card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Installed minds</p>
+                <h2>Studio Registry</h2>
+              </div>
+            </div>
+            <div id="studioList" class="artifact-list"></div>
+          </article>
+
+          <article class="card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Selected constitution</p>
+                <h2>Studio Profile</h2>
+              </div>
+            </div>
+            <div id="studioProfile" class="studio-profile"></div>
+          </article>
+
+          <article class="card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Pipeline</p>
+                <h2>Workflow Stages</h2>
+              </div>
+            </div>
+            <div id="stageFocus" class="stage-focus"></div>
+            <details class="stage-details">
+              <summary>Show Full 25-Stage Pipeline</summary>
+              <ol id="stageList" class="stage-list"></ol>
+            </details>
+          </article>
+
+          <article class="card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Persistence</p>
+                <h2>Episode Library</h2>
+              </div>
+            </div>
+            <div id="episodeList" class="artifact-list"></div>
+          </article>
+          </section>
+        </details>
+
+        <details class="advanced-workspace">
+          <summary>Advanced Workspace</summary>
+          <p class="advanced-workspace-note">Research controls, manual overrides, render internals, editorial audit, connector tools, and publishing operations live here when you need them.</p>
+        <section class="card span-full intelligence-lab">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 3 / Opportunity Intelligence</p>
+              <h2>Opportunity Observatory</h2>
+            </div>
+            <span class="pill">Proxy-labelled until grounded</span>
+          </div>
+          <p class="section-note">Discover candidates from Studio Pack seeds, structured manual imports, or MediaWiki search. Scores combine niche fit, demand, content gap, evidence, series potential, visual potential, commercial alignment, production burden, policy risk, and freshness risk. Heuristics never masquerade as live market measurements.</p>
+          <div class="opportunity-controls">
+            <label>Discovery provider
+              <select id="discoveryProvider">
+                <option value="studio_seeds" selected>Studio Pack seeds</option>
+                <option value="mediawiki_search">MediaWiki search</option>
+                <option value="manual">Manual JSON candidates</option>
+                <option value="connector">Installed discovery connector</option>
+              </select>
+            </label>
+            <label>Discovery connector
+              <select id="discoveryConnectorSelect"></select>
+            </label>
+            <label class="span-2">Discovery query
+              <input id="discoveryQuery" placeholder="e.g. suspension bridge failures" />
+            </label>
+            <button id="discoverButton" class="button button-primary" type="button">Discover and Score</button>
+          </div>
+          <div class="opportunity-grid">
+            <div>
+              <label>Manual candidate array
+                <textarea id="manualCandidateEditor" rows="10" spellcheck="false" placeholder='[{"title":"...","topic":"...","angle":"...","signals":{"audience_demand":0.7}}]'></textarea>
+              </label>
+              <label>Discovery connector input JSON
+                <textarea id="discoveryConnectorInput" rows="8" spellcheck="false" placeholder='{"query":"bridge engineering failures","max_results":10}'></textarea>
+              </label>
+              <div class="hero-actions pack-actions">
+                <button id="loadManualTemplateButton" class="button button-secondary" type="button">Load Candidate Template</button>
+                <button id="refreshOpportunityButton" class="button button-secondary" type="button">Refresh Analysis</button>
+                <button id="buildSeriesButton" class="button button-secondary" type="button">Build Series Plan</button>
+              </div>
+            </div>
+            <div class="calendar-controls">
+              <label>Calendar start<input id="calendarStart" type="date" /></label>
+              <label>Weeks<input id="calendarWeeks" type="number" min="1" max="26" value="6" /></label>
+              <label>Slots per week<input id="calendarSlots" type="number" min="1" max="7" value="2" /></label>
+              <button id="buildCalendarButton" class="button button-primary" type="button">Build Editorial Calendar</button>
+            </div>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel span-2">
+              <h3>Opportunity Backlog</h3>
+              <div id="opportunityList" class="opportunity-list"></div>
+            </div>
+            <div class="output-panel">
+              <h3>Cluster and Portfolio Analysis</h3>
+              <pre id="opportunityAnalysisJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Series Plan</h3>
+              <pre id="seriesPlanJson"></pre>
+            </div>
+            <div class="output-panel span-2">
+              <h3>Editorial Calendar</h3>
+              <pre id="calendarJson"></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 5 / Audience and Channel Strategy</p>
+              <h2>Audience Strategy Observatory</h2>
+            </div>
+            <span class="pill">Viewer job before format</span>
+          </div>
+          <p class="section-note">Inspect the selected studio's personas, channel promise, content pillars, portfolio balance, recent format streaks, and the next recommended creative rotation. Assess the current brief before spending research or render time.</p>
+          <div class="hero-actions pack-actions">
+            <button id="assessAudienceButton" class="button button-primary" type="button">Assess Current Brief</button>
+            <button id="refreshAudienceButton" class="button button-secondary" type="button">Refresh Channel Strategy</button>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel span-2">
+              <h3>Personas and Content Pillars</h3>
+              <div id="audienceProfileList" class="opportunity-list"></div>
+            </div>
+            <div class="output-panel">
+              <h3>Channel Strategy</h3>
+              <pre id="channelStrategyJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Current Brief Fit</h3>
+              <pre id="audienceFitJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Fatigue and Repetition</h3>
+              <pre id="fatigueJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Recommended Rotation</h3>
+              <pre id="formatRotationJson"></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab story-forge">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 6 / Content Architecture and Story Engine</p>
+              <h2>Narrative Forge</h2>
+            </div>
+            <span class="pill">Claim-bound script, not prompt soup</span>
+          </div>
+          <p class="section-note">Preview the selected Studio Pack's narrative contract before research, then inspect the generated hook alternatives, full beat-level script, timing estimate, retention plan, and independent script-pass report. Duration is automatically limited when the evidence ledger is too thin to support the requested runtime.</p>
+          <div class="hero-actions pack-actions">
+            <button id="previewStoryButton" class="button button-secondary" type="button">Preview Narrative Contract</button>
+            <button id="refreshStoryButton" class="button button-primary" type="button">Load Current Story Package</button>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Narrative Blueprint</h3><pre id="narrativeBlueprintJson"></pre></div>
+            <div class="output-panel"><h3>Story Gate</h3><pre id="storyReportJson"></pre></div>
+            <div class="output-panel"><h3>Timing Plan</h3><pre id="timingPlanJson"></pre></div>
+            <div class="output-panel"><h3>Script Passes and Critic</h3><pre id="scriptCriticJson"></pre></div>
+            <div class="output-panel span-2"><h3>Full Scene Script</h3><div id="scriptPreview" class="script-preview"></div></div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab visual-foundry">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 8 / Audio, Host, and Performance Engine</p>
+              <h2>Visual Foundry</h2>
+            </div>
+            <span class="pill">Every pixel has a passport</span>
+          </div>
+          <p class="section-note">Preview the selected studio's design constitution, then inspect the generated 1920×1080 storyboards, thumbnail candidate, scene composition grammar, provenance ledger, rights status, and anti-template audit. Imported replacements remain blocked until their creator and licence are recorded.</p>
+          <div class="hero-actions pack-actions">
+            <button id="previewVisualButton" class="button button-secondary" type="button">Preview Visual Constitution</button>
+            <button id="refreshVisualButton" class="button button-primary" type="button">Load Current Visual Package</button>
+          </div>
+          <div id="visualIdentityStrip" class="visual-identity-strip"></div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Visual Identity</h3><pre id="visualIdentityJson"></pre></div>
+            <div class="output-panel"><h3>Visual Gate</h3><pre id="visualReportJson"></pre></div>
+            <div class="output-panel"><h3>Thumbnail Plan</h3><pre id="thumbnailPlanJson"></pre></div>
+            <div class="output-panel"><h3>Anti-template Audit</h3><pre id="visualSimilarityJson"></pre></div>
+            <div class="output-panel span-2"><h3>Storyboard and Thumbnail Previews</h3><div id="visualStoryboard" class="visual-storyboard"></div></div>
+            <div class="output-panel span-2"><h3>Asset Provenance and Rights</h3><pre id="assetProvenanceJson"></pre></div>
+          </div>
+          <div class="pack-lab visual-asset-register">
+            <div>
+              <h3>Register a Licensed Replacement</h3>
+              <p class="section-note">Place the file inside the selected episode's <code>imports/visuals/</code> directory, then register it here. SVG, PNG, JPEG, and WebP are supported.</p>
+              <label>Relative path<input id="visualAssetPath" value="imports/visuals/replacement.png" /></label>
+              <label>Scene ID<input id="visualAssetScene" placeholder="scene_01" /></label>
+              <label>Creator or publisher<input id="visualAssetCreator" placeholder="Your name or the credited creator" /></label>
+              <label>Licence<input id="visualAssetLicence" placeholder="CC BY 4.0, public domain, commissioned, project-owned..." /></label>
+              <label>Replaces asset ID<input id="visualAssetReplaces" placeholder="Optional generated asset ID" /></label>
+              <div class="hero-actions pack-actions">
+                <button id="validateVisualAssetButton" class="button button-secondary" type="button">Validate Rights Record</button>
+                <button id="registerVisualAssetButton" class="button button-primary" type="button">Register Replacement</button>
+              </div>
+            </div>
+            <div class="output-panel compact-output"><h3>Replacement Validation</h3><pre id="visualAssetValidationJson"></pre></div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab audio-foundry">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 8 / Audio, Host, and Performance Engine</p>
+              <h2>Performance Forge</h2>
+            </div>
+            <span class="pill">Every voice leaves evidence</span>
+          </div>
+          <p class="section-note">Inspect the host identity, pronunciation lexicon, scene-level pace and emotional direction, sound-design plan, cache keys, mastering targets, measured loudness, and generated preview. Editorial approval unlocks synthesis; a separate hash-bound audio approval unlocks rendering.</p>
+          <div class="hero-actions pack-actions">
+            <button id="refreshAudioButton" class="button button-secondary" type="button">Load Audio Plan</button>
+            <select id="audioProviderSelect" aria-label="Audio provider">
+              <option value="auto" selected>Auto provider</option>
+              <option value="piper">Local Piper</option>
+              <option value="elevenlabs">ElevenLabs</option>
+              <option value="espeak">Local eSpeak reference</option>
+            </select>
+            <button id="buildAudioButton" class="button button-primary" type="button">Build and Master Audio</button>
+            <button id="approveAudioButton" class="button button-secondary" type="button">Approve Audio Performance</button>
+          </div>
+          <div class="pack-lab visual-asset-register">
+            <div>
+              <h3>Discover Theme Music</h3>
+              <p class="section-note">Find five thematically appropriate instrumental tracks online for the current studio and topic. Requires <code>JAMENDO_CLIENT_ID</code>.</p>
+              <label>Topic override<input id="musicDiscoveryTopic" placeholder="Leave blank to use the current episode topic" /></label>
+              <div class="hero-actions pack-actions">
+                <button id="discoverMusicButton" class="button button-secondary" type="button">Discover Theme Music</button>
+              </div>
+            </div>
+            <div class="output-panel compact-output"><h3>Music Search</h3><pre id="musicDiscoveryJson"></pre></div>
+          </div>
+          <div id="hostIdentityStrip" class="visual-identity-strip"></div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Host Profile</h3><pre id="hostProfileJson"></pre></div>
+            <div class="output-panel"><h3>Pronunciation Lexicon</h3><pre id="pronunciationLexiconJson"></pre></div>
+            <div class="output-panel"><h3>Performance Plan</h3><pre id="audioPerformancePlanJson"></pre></div>
+            <div class="output-panel"><h3>Sound Design</h3><pre id="soundDesignJson"></pre></div>
+            <div class="output-panel"><h3>Audio Gate</h3><pre id="audioPreflightJson"></pre></div>
+            <div class="output-panel"><h3>Measured Loudness</h3><pre id="loudnessReportJson"></pre></div>
+            <div class="output-panel span-2"><h3>Theme Music Candidates</h3><div id="musicDiscoveryList" class="script-preview"></div></div>
+            <div class="output-panel span-2"><h3>Scene Performances</h3><div id="audioSceneList" class="script-preview"></div></div>
+            <div class="output-panel span-2"><h3>Episode Audio Preview</h3><div id="audioPreviewPlayer" class="audio-preview"></div></div>
+          </div>
+          <div class="pack-lab visual-asset-register">
+            <div>
+              <h3>Register a Licensed Scene Performance</h3>
+              <p class="section-note">Place the file inside <code>imports/audio/</code>. Name it after the scene ID for automatic pickup, or register the exact relative path here.</p>
+              <label>Relative path<input id="audioAssetPath" value="imports/audio/scene_id.wav" /></label>
+              <label>Scene ID<input id="audioAssetScene" placeholder="scene_01" /></label>
+              <label>Creator or provider<input id="audioAssetCreator" placeholder="Narrator, studio, or licensed provider" /></label>
+              <label>Licence<input id="audioAssetLicence" placeholder="project-owned, commissioned, CC BY 4.0..." /></label>
+              <div class="hero-actions pack-actions">
+                <button id="registerAudioAssetButton" class="button button-primary" type="button">Register Audio Import</button>
+              </div>
+            </div>
+            <div class="output-panel compact-output"><h3>Audio Approval</h3><pre id="audioApprovalJson"></pre></div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab render-foundry">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 9 / Scene Compositor and Render Engine</p>
+              <h2>Programme Compositor</h2>
+            </div>
+            <span class="pill">Decoded media or it did not happen</span>
+          </div>
+          <p class="section-note">Assemble approved storyboards and mastered scene audio into a measured proxy or final programme. Camera grammar is studio-specific, captions are emitted as SRT and embedded into MP4, unchanged segments are cached, and final delivery remains blocked until render QA and a hash-bound human watch-through both pass.</p>
+          <div class="hero-actions pack-actions">
+            <button id="refreshRenderButton" class="button button-secondary" type="button">Load Render Plan</button>
+            <select id="renderProfileSelect" aria-label="Render profile">
+              <option value="proxy">16:9 Proxy • 960×540</option>
+              <option value="final" selected>16:9 Final • 1920×1080</option>
+              <option value="vertical_proxy">9:16 Proxy • 540×960</option>
+              <option value="vertical_final">9:16 Final • 1080×1920</option>
+            </select>
+            <input id="renderSceneIds" placeholder="Optional scene IDs, comma-separated" />
+            <button id="buildRenderButton" class="button button-primary" type="button">Compose Programme</button>
+            <button id="approveRenderButton" class="button button-secondary" type="button">Approve Final Render</button>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Render Plan</h3><pre id="renderPlanJson"></pre></div>
+            <div class="output-panel"><h3>Measured Render QA</h3><pre id="renderQaJson"></pre></div>
+            <div class="output-panel"><h3>Caption Track</h3><pre id="captionTrackJson"></pre></div>
+            <div class="output-panel"><h3>Render Approval</h3><pre id="renderApprovalJson"></pre></div>
+            <div class="output-panel span-2"><h3>Scene Segment Ledger</h3><div id="renderSegmentList" class="script-preview"></div></div>
+            <div class="output-panel span-2"><h3>Finished Programme</h3><div id="renderPreviewPlayer" class="video-preview"></div></div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab editorial-cockpit">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 10 / Human Editorial Cockpit</p>
+              <h2>Review Room and Final Sign-off</h2>
+            </div>
+            <span id="reviewCoverageBadge" class="pill">No review queue</span>
+          </div>
+          <p class="section-note">Assign specialist reviewers, leave scene- and timeline-bound comments, compare immutable review snapshots, resolve blockers, and record a final sign-off that is bound to every current approval and delivery artifact hash.</p>
+          <div class="review-toolbar">
+            <label>Reviewer<input id="reviewerName" value="local-editor" /></label>
+            <label>Queue role<select id="reviewRoleFilter"><option value="all">All roles</option></select></label>
+            <button id="bootstrapReviewButton" class="button button-secondary" type="button">Build Review Queue</button>
+            <button id="captureSnapshotButton" class="button button-secondary" type="button">Capture Version Snapshot</button>
+            <button id="finalSignoffButton" class="button button-primary" type="button">Record Final Sign-off</button>
+          </div>
+          <div class="review-layout">
+            <div>
+              <h3>Role Queues</h3>
+              <div id="reviewQueueList" class="review-queue-list"></div>
+            </div>
+            <div class="output-panel compact-output">
+              <h3>Approval Dependency Map</h3>
+              <pre id="reviewDependencyJson"></pre>
+            </div>
+          </div>
+          <div class="review-layout review-comments-grid">
+            <div class="review-comment-form">
+              <h3>Add Review Comment</h3>
+              <label>Review task<select id="reviewCommentTask"></select></label>
+              <div class="review-inline-fields">
+                <label>Scene ID<input id="reviewCommentScene" placeholder="scene_04" /></label>
+                <label>Timeline seconds<input id="reviewCommentTime" type="number" min="0" step="0.1" placeholder="42.5" /></label>
+                <label>Severity<select id="reviewCommentSeverity"><option value="note">Note</option><option value="suggestion">Suggestion</option><option value="blocker">Blocker</option></select></label>
+              </div>
+              <label>Comment<textarea id="reviewCommentBody" rows="4" placeholder="Describe the exact issue and required correction."></textarea></label>
+              <button id="addReviewCommentButton" class="button button-primary" type="button">Add Bound Comment</button>
+            </div>
+            <div>
+              <h3>Comment Ledger</h3>
+              <div id="reviewCommentsList" class="review-comments-list"></div>
+            </div>
+          </div>
+          <div class="review-layout">
+            <div>
+              <h3>Version Comparison</h3>
+              <div class="review-inline-fields">
+                <label>Earlier snapshot<select id="leftSnapshot"></select></label>
+                <label>Later snapshot<select id="rightSnapshot"></select></label>
+              </div>
+              <button id="compareSnapshotsButton" class="button button-secondary" type="button">Compare Snapshots</button>
+              <pre id="snapshotComparisonJson"></pre>
+            </div>
+            <div class="output-panel compact-output">
+              <h3>Final Sign-off</h3>
+              <pre id="finalSignoffJson"></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="publishingCockpit" class="card span-full intelligence-lab publishing-cockpit">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 11 / Publishing and Compliance</p>
+              <h2>Release Bridge</h2>
+            </div>
+            <span id="publishingStatusBadge" class="pill">Preflight not built</span>
+          </div>
+          <p class="section-note">Prepare a hash-bound release package, review audience and synthetic-media declarations, upload the final programme privately through YouTube's resumable protocol, verify processing, attach the approved thumbnail and captions, and schedule only after remote evidence agrees with the signed-off local package.</p>
+          <div class="publishing-grid">
+            <label>Title<input id="publishingTitle" maxlength="100" placeholder="Verified programme title" /></label>
+            <label>Category ID<input id="publishingCategory" value="27" inputmode="numeric" placeholder="27" /></label>
+            <label class="publishing-description">Description<textarea id="publishingDescription" rows="7" placeholder="Episode summary, sources, disclosures, and channel notes"></textarea></label>
+            <label class="publishing-tags">Tags<input id="publishingTags" placeholder="engineering, failure analysis, documentary" /></label>
+            <label>Planned publish time<input id="publishingPublishAt" type="datetime-local" /></label>
+            <div class="publishing-flags" role="group" aria-label="YouTube declarations">
+              <label><input id="publishingMadeForKids" type="checkbox" /> Made for kids</label>
+              <label><input id="publishingSyntheticMedia" type="checkbox" /> Contains realistic altered or synthetic media</label>
+              <label><input id="publishingPaidPlacement" type="checkbox" /> Contains paid product placement</label>
+            </div>
+          </div>
+          <div class="hero-actions publishing-actions">
+            <button id="publishingPreflightButton" class="button button-secondary" type="button">Build Compliance Preflight</button>
+            <button id="publishingUploadButton" class="button button-primary" type="button">Upload Privately</button>
+            <button id="publishingPollButton" class="button button-secondary" type="button">Poll Processing</button>
+            <button id="publishingAssetsButton" class="button button-secondary" type="button">Attach Captions + Thumbnail</button>
+            <button id="publishingVerifyButton" class="button button-secondary" type="button">Verify Remote Release</button>
+          </div>
+          <div class="publishing-schedule">
+            <label>Schedule confirmation<input id="publishingScheduleConfirmation" placeholder="Type SCHEDULE VERIFIED VIDEO" /></label>
+            <button id="publishingScheduleButton" class="button button-primary" type="button">Schedule Verified Video</button>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Reviewed Metadata Package</h3><pre id="publishingMetadataJson"></pre></div>
+            <div class="output-panel"><h3>Local Compliance Evidence</h3><pre id="publishingComplianceJson"></pre></div>
+            <div class="output-panel"><h3>Remote YouTube Evidence</h3><pre id="publishingRemoteJson"></pre></div>
+            <div class="output-panel"><h3>Publishing Event Ledger</h3><pre id="publishingEventsJson"></pre></div>
+          </div>
+        </section>
+
+        <section class="card span-full intelligence-lab">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Phase 4 / Connector Runtime</p>
+              <h2>Connector Bay and Evidence Graph</h2>
+            </div>
+            <span class="pill">Secrets stay in environment variables</span>
+          </div>
+          <p class="section-note">Installed connectors are declarative, capability-scoped, and executed through guarded adapters. Topic signals remain separate from factual research evidence. Custom definitions may configure approved adapters, but cannot upload arbitrary runtime code.</p>
+          <div class="connector-grid">
+            <div>
+              <h3>Installed Connectors</h3>
+              <div id="connectorList" class="artifact-list"></div>
+            </div>
+            <div>
+              <label>Selected connector<select id="connectorSelect"></select></label>
+              <label>Run input JSON<textarea id="connectorInputEditor" rows="12" spellcheck="false">{}</textarea></label>
+              <div class="hero-actions pack-actions">
+                <button id="testConnectorButton" class="button button-secondary" type="button">Test Connector</button>
+                <button id="runConnectorButton" class="button button-primary" type="button">Run and Persist</button>
+              </div>
+            </div>
+          </div>
+          <div class="opportunity-output-grid">
+            <div class="output-panel"><h3>Configuration Status</h3><pre id="connectorStatusJson"></pre></div>
+            <div class="output-panel"><h3>Latest Connector Run</h3><pre id="connectorRunJson"></pre></div>
+            <div class="output-panel span-2"><h3>Persisted Connector Runs</h3><pre id="connectorRunsJson"></pre></div>
+          </div>
+          <div class="pack-lab connector-builder">
+            <div>
+              <h3>Custom Connector Definition</h3>
+              <textarea id="connectorDefinitionEditor" rows="20" spellcheck="false" placeholder="Paste a Connector Schema 1.0 JSON definition here."></textarea>
+              <div class="hero-actions pack-actions">
+                <button id="loadConnectorTemplateButton" class="button button-secondary" type="button">Load RSS Template</button>
+                <button id="validateConnectorButton" class="button button-secondary" type="button">Validate Connector</button>
+                <button id="installConnectorButton" class="button button-primary" type="button">Install Valid Connector</button>
+              </div>
+            </div>
+            <div class="output-panel compact-output"><h3>Definition Validation</h3><pre id="connectorValidationJson"></pre></div>
+          </div>
+        </section>
+
+        <section class="card span-full">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Studio Pack Builder</p>
+              <h2>Pack Lab</h2>
+            </div>
+            <span class="pill">Validate before install</span>
+          </div>
+          <div class="pack-lab">
+            <div>
+              <textarea id="packEditor" rows="20" spellcheck="false" placeholder="Paste a Studio Pack JSON document here."></textarea>
+              <div class="hero-actions pack-actions">
+                <button id="loadPackTemplateButton" class="button button-secondary" type="button">Load Custom Template</button>
+                <button id="validatePackButton" class="button button-secondary" type="button">Validate Pack</button>
+                <button id="installPackButton" class="button button-primary" type="button">Install Valid Pack</button>
+              </div>
+            </div>
+            <div class="output-panel compact-output">
+              <h3>Depth and Validation</h3>
+              <pre id="packValidationJson"></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="card span-full">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Research, Claims, and Studio Gates</p>
+              <h2>Generated Packet</h2>
+            </div>
+            <div class="hero-actions">
+              <button id="approveButton" class="button button-secondary">Approve Editorial Packet</button>
+              <button id="runIntegrationsButton" class="button button-primary">Run Storyboard and Audio Jobs</button>
+            </div>
+          </div>
+          <div class="output-grid">
+            <div class="output-panel">
+              <h3>Opportunity Snapshot</h3>
+              <pre id="opportunityJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Opportunity Decision</h3>
+              <pre id="opportunityReportJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Audience Fit</h3>
+              <pre id="episodeAudienceFitJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Channel Strategy Snapshot</h3>
+              <pre id="episodeChannelStrategyJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Studio Blueprint</h3>
+              <pre id="studioBlueprintJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Studio Fit</h3>
+              <pre id="studioFitJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Episode JSON</h3>
+              <pre id="episodeJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Verification</h3>
+              <pre id="verificationJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Research Ledger</h3>
+              <pre id="researchJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Source Hierarchy</h3>
+              <pre id="sourceHierarchyJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Freshness Report</h3>
+              <pre id="freshnessJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Claim Conflict Graph</h3>
+              <pre id="conflictGraphJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Atomic Claims</h3>
+              <pre id="claimsJson"></pre>
+            </div>
+            <div class="output-panel">
+              <h3>Approval Checklist</h3>
+              <ul id="approvalChecklist" class="checklist"></ul>
+            </div>
+            <div class="output-panel">
+              <h3>QA Report</h3>
+              <pre id="qaJson"></pre>
+            </div>
+            <div class="output-panel span-2">
+              <h3>Episode Directory</h3>
+              <div id="artifactList" class="artifact-list"></div>
+            </div>
+          </div>
+        </section>
+        </details>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

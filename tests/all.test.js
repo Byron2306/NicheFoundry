@@ -1,0 +1,10 @@
+require('./phase0.test');
+require('./phase1.test');
+require('./phase2.test');
+require('./phase3.test');
+require('./phase4.test');
+require('./phase5.test');
+require('./phase6.test');
+require('./phase7.test');
+require('./phase8.test');
+require('./phase9.test');

@@ -1,0 +1,26 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "youtube_public_discovery",
+    "name": "YouTube Public Discovery",
+    "version": "1.0.0",
+    "adapter": "youtube_public",
+    "description": "Searches public YouTube videos and enriches them with current public statistics for opportunity and competitor evidence.",
+    "capabilities": ["topic_discovery", "competitor_evidence", "market_signals"],
+    "auth": { "type": "api_key", "env": ["YOUTUBE_API_KEY"] },
+    "default_source_tier": 4,
+    "default_source_type": "platform_metadata",
+    "default_config": {
+      "region_code": "ZA",
+      "relevance_language": "en",
+      "max_results": 10,
+      "published_after_days": 730
+    },
+    "limits": { "max_items": 50, "timeout_ms": 15000, "attempts": 2 },
+    "trust": {
+      "can_satisfy_primary_source": false,
+      "content_completeness": "metadata_only",
+      "notes": "Public metadata is market evidence, not factual source evidence for a script."
+    }
+  }
+}

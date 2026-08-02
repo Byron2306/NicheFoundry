@@ -1,0 +1,624 @@
+{
+  "schema_version": "1.0",
+  "studio": {
+    "id": "practical_open_source",
+    "name": "Practical Open Source",
+    "version": "1.2.0",
+    "tagline": "Useful local tools, proven step by step.",
+    "domain": "current open-source software workflows for educators, researchers, creators, and ordinary users who want reproducible local solutions",
+    "description": "A hands-on software studio that tests workflows, records versions, shows failure recovery, and avoids pretending a command worked when it did not."
+  },
+  "audience": {
+    "primary_age": "18-54",
+    "knowledge_level": "beginner to intermediate technical user",
+    "motivations": [
+      "solve a concrete software problem",
+      "reduce dependence on paid cloud tools",
+      "learn reproducible local workflows"
+    ],
+    "viewer_jobs": [
+      "show me the exact working steps",
+      "help me choose between tools",
+      "explain how to recover when the setup fails"
+    ],
+    "vocabulary": "plain technical language with commands, versions, and expected outputs",
+    "personas": [
+      {
+        "id": "practical_problem_solver",
+        "name": "The Practical Problem Solver",
+        "description": "A user who needs a tested open-source workflow to solve a concrete problem without wasting an afternoon.",
+        "age_range": "18-54",
+        "knowledge_level": "beginner to intermediate technical user",
+        "motivations": [
+          "complete a real task",
+          "avoid expensive software",
+          "understand the minimum necessary steps"
+        ],
+        "frustrations": [
+          "outdated tutorials",
+          "hidden prerequisites",
+          "commands that were never tested"
+        ],
+        "viewing_context": [
+          "desktop beside the terminal",
+          "task-focused viewing",
+          "pausing to copy commands"
+        ],
+        "desired_reward": "A reproducible workflow that reaches a verified result.",
+        "likely_next_action": "Use the command sheet, save the video, or continue to troubleshooting."
+      },
+      {
+        "id": "research_and_education_builder",
+        "name": "The Research and Education Builder",
+        "description": "An educator, researcher, or institutional user evaluating open tools for durable workflows.",
+        "age_range": "24-60",
+        "knowledge_level": "informed professional",
+        "motivations": [
+          "build maintainable workflows",
+          "compare tools fairly",
+          "protect privacy and budgets"
+        ],
+        "frustrations": [
+          "marketing disguised as comparison",
+          "licence ambiguity",
+          "missing migration advice"
+        ],
+        "viewing_context": [
+          "desktop research",
+          "team evaluation",
+          "implementation planning"
+        ],
+        "desired_reward": "A candid decision framework with tested trade-offs and clear next steps.",
+        "likely_next_action": "Download a workflow pack or compare another tool."
+      }
+    ],
+    "frustrations": [
+      "commands that were never tested",
+      "hidden prerequisites",
+      "licence ambiguity",
+      "marketing disguised as comparison",
+      "missing migration advice",
+      "outdated tutorials"
+    ],
+    "viewing_context": [
+      "desktop beside the terminal",
+      "desktop research",
+      "implementation planning",
+      "pausing to copy commands",
+      "task-focused viewing",
+      "team evaluation"
+    ],
+    "desired_reward": "A reproducible workflow that reaches a verified result.",
+    "likely_next_action": "Use the command sheet, save the video, or continue to troubleshooting."
+  },
+  "promise": {
+    "statement": "We test useful open-source workflows, show the exact environment, and prove the result before recommending it.",
+    "required": [
+      "state operating system and software versions",
+      "show prerequisites before commands",
+      "include validation and common failure recovery",
+      "distinguish tested behaviour from documentation claims"
+    ],
+    "prohibited": [
+      "fabricated terminal output",
+      "unverified one-command miracle installs",
+      "hidden affiliate influence",
+      "obsolete instructions presented as current"
+    ]
+  },
+  "fit": {
+    "keywords": [
+      "open source",
+      "linux",
+      "debian",
+      "ubuntu",
+      "installation",
+      "tutorial",
+      "workflow",
+      "local AI",
+      "self-hosted",
+      "command line",
+      "docker",
+      "python",
+      "javascript",
+      "research tool",
+      "automation",
+      "configuration",
+      "troubleshooting",
+      "repository",
+      "version",
+      "setup"
+    ],
+    "negative_keywords": [
+      "bridge collapse",
+      "ancient artefact",
+      "museum object",
+      "celebrity gossip",
+      "medical diagnosis"
+    ],
+    "topic_examples": [
+      "set up a local transcription workflow on Debian",
+      "compare open-source reference managers for researchers",
+      "recover a broken Docker Compose deployment",
+      "build a private local AI document search tool",
+      "automate image compression with command-line tools"
+    ],
+    "minimum_score": 0.22
+  },
+  "research": {
+    "minimum_independent_sources": 2,
+    "primary_source_required": true,
+    "enforcement_stage": "pre_production",
+    "preferred_source_tiers": {
+      "tier_1": [
+        "official project documentation",
+        "release notes and changelogs",
+        "source repositories",
+        "tested local execution evidence"
+      ],
+      "tier_2": [
+        "maintainer discussions",
+        "reproducible issue reports",
+        "distribution documentation",
+        "standards documentation"
+      ],
+      "tier_3": [
+        "reputable technical publications",
+        "community tutorials with explicit versions",
+        "high-quality encyclopaedic orientation sources"
+      ]
+    },
+    "disallowed_sources": [
+      "SEO tutorial farms without versions",
+      "copied commands without provenance",
+      "AI summaries that were not executed"
+    ],
+    "conflict_policy": "Prefer tested behaviour for the declared environment, record documentation discrepancies, and identify version-specific differences.",
+    "freshness_days": 90
+  },
+  "content": {
+    "default_archetype": "guided_tutorial",
+    "archetypes": [
+      {
+        "id": "guided_tutorial",
+        "name": "Guided Tutorial",
+        "description": "Move from an observable goal through prerequisites, exact steps, validation, failure recovery, and extension.",
+        "required_story_beats": [
+          "outcome_preview",
+          "environment_and_prerequisites",
+          "installation_or_setup",
+          "core_workflow",
+          "validation",
+          "common_failure_and_recovery",
+          "next_level_extension"
+        ],
+        "hook_types": [
+          "working result preview",
+          "pain point resolved",
+          "before-and-after workflow"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "command_sheet",
+          "article"
+        ]
+      },
+      {
+        "id": "tool_comparison",
+        "name": "Tool Comparison",
+        "description": "Compare tools against declared user scenarios, reproducible criteria, and measured trade-offs.",
+        "required_story_beats": [
+          "user_problem",
+          "decision_criteria",
+          "test_environment",
+          "tool_one_result",
+          "tool_two_result",
+          "tradeoff_matrix",
+          "recommendation_by_use_case"
+        ],
+        "hook_types": [
+          "same task different tools",
+          "unexpected tradeoff",
+          "decision shortcut"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "comparison_table"
+        ]
+      },
+      {
+        "id": "problem_and_fix",
+        "name": "Problem and Fix",
+        "description": "Diagnose one failure from symptoms through root cause, repair, verification, and prevention.",
+        "required_story_beats": [
+          "observable_symptom",
+          "environment_capture",
+          "diagnostic_checks",
+          "root_cause",
+          "minimal_fix",
+          "verification",
+          "prevention"
+        ],
+        "hook_types": [
+          "error message",
+          "failed setup",
+          "root cause reveal"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "troubleshooting_sheet"
+        ]
+      },
+      {
+        "id": "update_briefing",
+        "name": "Update Briefing",
+        "description": "Explain what changed in a current release, who is affected, migration risk, and verified next steps.",
+        "required_story_beats": [
+          "change_summary",
+          "affected_users",
+          "version_evidence",
+          "behaviour_difference",
+          "migration_or_action",
+          "known_issues",
+          "what_to_watch"
+        ],
+        "hook_types": [
+          "breaking change",
+          "new capability",
+          "migration risk"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "newsletter"
+        ]
+      }
+    ]
+  },
+  "visuals": {
+    "language": [
+      "real screen recordings",
+      "terminal commands with syntax emphasis",
+      "environment badges",
+      "before-and-after outputs",
+      "decision matrices",
+      "architecture diagrams"
+    ],
+    "forbidden": [
+      "fabricated terminal output",
+      "tiny unreadable code",
+      "generic hacker rain unrelated to the task",
+      "stock footage replacing actual proof"
+    ],
+    "motion_rules": [
+      "zoom only when it improves legibility",
+      "commands remain visible long enough to copy",
+      "errors and validation output receive equal visual weight"
+    ],
+    "palette": [
+      "near-black",
+      "terminal green",
+      "cyan structure",
+      "amber warning",
+      "white code"
+    ]
+  },
+  "voice": {
+    "tone": "calm, practical, precise, and candid about failure",
+    "pacing": "slow around commands and configuration, brisk in conceptual summaries",
+    "pronunciation_domains": [
+      "software names",
+      "command flags",
+      "package names",
+      "file paths"
+    ],
+    "forbidden_traits": [
+      "fake certainty",
+      "needless jargon",
+      "mocking beginners"
+    ]
+  },
+  "compliance": {
+    "risk_level": "low",
+    "human_fact_review": true,
+    "synthetic_reconstruction_disclosure": "required if generated interface footage could be mistaken for a real tested run",
+    "upload_default": "private",
+    "required_checks": [
+      "version and operating-system declaration",
+      "command reproducibility",
+      "secret redaction",
+      "licence compatibility",
+      "deprecated instruction check"
+    ]
+  },
+  "monetization": {
+    "paths": [
+      "sponsorships from transparent developer-tool providers",
+      "premium workflow packs",
+      "consulting and implementation leads",
+      "members-only troubleshooting clinics"
+    ],
+    "prohibited_relationships": [
+      "undisclosed paid rankings",
+      "sponsor control over benchmark criteria"
+    ],
+    "trust_rules": [
+      "affiliate status is separated from technical scoring",
+      "failed tests remain visible even when a sponsor is involved"
+    ]
+  },
+  "metrics": {
+    "primary": [
+      "validated completion rate",
+      "search-driven watch time",
+      "returning viewers",
+      "command-sheet downloads"
+    ],
+    "guardrails": [
+      "reported broken instructions",
+      "version staleness",
+      "secret exposure findings",
+      "unreproduced recommendation rate"
+    ]
+  },
+  "samples": [
+    {
+      "working_title": "Build a Private Local Transcription Workflow on Debian",
+      "topic": "install and validate an open-source offline speech-to-text workflow on Debian Linux",
+      "story_premise": "Start with an audio file and end with a verified local transcript, including hardware expectations and recovery from the most common setup failure.",
+      "age_band": "13+",
+      "difficulty": "mixed",
+      "question_count": 6,
+      "countdown_seconds": 8,
+      "audience_mode": "general_family",
+      "contains_synthetic_media": false,
+      "source_mode": "wikipedia",
+      "source_queries": [
+        "Speech recognition",
+        "FFmpeg",
+        "Debian"
+      ],
+      "visual_direction": "Real terminal capture, readable commands, environment badges, and proof-of-output panels.",
+      "studio_id": "practical_open_source",
+      "archetype_id": "guided_tutorial"
+    }
+  ],
+  "channel_strategy": {
+    "minimum_audience_fit_score": 64,
+    "promise_tests": [
+      "Can the viewer reproduce the result in a declared environment?",
+      "Are version, operating system, and prerequisites explicit?",
+      "Are failures and trade-offs preserved rather than edited away?"
+    ],
+    "content_pillars": [
+      {
+        "id": "tested_workflows",
+        "name": "Tested Workflows",
+        "purpose": "Deliver end-to-end open-source workflows with explicit prerequisites, validation, and recovery.",
+        "keywords": [
+          "workflow",
+          "install",
+          "setup",
+          "guide",
+          "validation",
+          "command",
+          "result"
+        ],
+        "archetypes": [
+          "guided_tutorial"
+        ],
+        "target_share": 0.4
+      },
+      {
+        "id": "diagnostics_and_repairs",
+        "name": "Diagnostics and Repairs",
+        "purpose": "Resolve concrete failures through environment capture, root-cause analysis, minimal fixes, and prevention.",
+        "keywords": [
+          "error",
+          "fix",
+          "diagnose",
+          "troubleshoot",
+          "root cause",
+          "repair"
+        ],
+        "archetypes": [
+          "problem_and_fix"
+        ],
+        "target_share": 0.25
+      },
+      {
+        "id": "tool_decisions",
+        "name": "Tool Decisions",
+        "purpose": "Compare open tools against declared scenarios, reproducible criteria, and measured trade-offs.",
+        "keywords": [
+          "compare",
+          "versus",
+          "decision",
+          "benchmark",
+          "tradeoff",
+          "recommendation"
+        ],
+        "archetypes": [
+          "tool_comparison"
+        ],
+        "target_share": 0.2
+      },
+      {
+        "id": "current_releases",
+        "name": "Current Releases",
+        "purpose": "Explain material software changes, affected users, migration risk, and verified actions.",
+        "keywords": [
+          "release",
+          "update",
+          "version",
+          "breaking change",
+          "migration",
+          "known issue"
+        ],
+        "archetypes": [
+          "update_briefing"
+        ],
+        "target_share": 0.15
+      }
+    ],
+    "portfolio_targets": {
+      "core_pillar": 0.5,
+      "search_evergreen": 0.2,
+      "experimental": 0.15,
+      "audience_request": 0.1,
+      "commercial_intent": 0.05
+    },
+    "format_rotation": {
+      "maximum_same_archetype_streak": 2,
+      "maximum_same_pillar_streak": 2,
+      "maximum_same_viewer_job_streak": 3,
+      "maximum_same_output_streak": 3,
+      "lookback_items": 10
+    }
+  },
+  "story_engine": {
+    "narrative_mode": "reproducible_instruction",
+    "default_target_minutes": 10,
+    "spoken_words_per_minute": 138,
+    "opening_rules": [
+      "Show the observable result or failure state first.",
+      "Declare the environment and test before recommending a command."
+    ],
+    "retention_devices": [
+      "verified result preview",
+      "environment checkpoint",
+      "diagnostic fork",
+      "root-cause reveal",
+      "validation checkpoint",
+      "recovery path",
+      "next-level extension"
+    ],
+    "closing_rules": [
+      "Repeat the validation and preserve the recovery path.",
+      "State the versions and conditions under which the result was verified."
+    ],
+    "forbidden_phrases": [
+      "works for everyone",
+      "one click fix",
+      "guaranteed solution"
+    ],
+    "required_passes": [
+      "evidence",
+      "structure",
+      "audience",
+      "spoken_language",
+      "timing",
+      "originality",
+      "sensationalism"
+    ]
+  },
+  "visual_system": {
+    "name": "Practical Open Source Verified Interface",
+    "motif": "verified_terminal",
+    "texture": "terminal_grid",
+    "icon_style": "monoline_system",
+    "diagram_style": "architecture_flow",
+    "map_style": "dependency_graph",
+    "compositions": [
+      "terminal_proof",
+      "workflow_map",
+      "before_after",
+      "decision_matrix",
+      "step_sequence",
+      "validated_result"
+    ],
+    "thumbnail_compositions": [
+      "result_proof",
+      "tool_faceoff",
+      "error_to_fix"
+    ],
+    "identity": {
+      "colors": {
+        "background": "#05090b",
+        "surface": "#0b1418",
+        "panel": "#111d22",
+        "primary": "#effff6",
+        "muted": "#8ea6a0",
+        "accent": "#59ef9a",
+        "secondary": "#4fd7ff",
+        "danger": "#ffb24c",
+        "grid": "#18302c"
+      },
+      "typography": {
+        "display": "Space Grotesk, Inter, sans-serif",
+        "body": "Inter, Arial, sans-serif",
+        "mono": "JetBrains Mono, IBM Plex Mono, monospace"
+      }
+    },
+    "grid": {
+      "columns": 12,
+      "gutter_px": 24,
+      "margin_px": 88,
+      "baseline_px": 8
+    },
+    "safe_area": {
+      "title": 0.075,
+      "action": 0.05,
+      "captions_bottom": 0.17
+    },
+    "accessibility": {
+      "minimum_body_px_1080p": 34,
+      "minimum_caption_px_1080p": 44
+    }
+  },
+  "audio_system": {
+    "host": {
+      "id": "maintainer",
+      "name": "The Maintainer",
+      "rate_wpm": 154,
+      "pitch": 46,
+      "amplitude": 160,
+      "espeak_voice": "en-us",
+      "energy": 0.48
+    },
+    "secondary_host": {
+      "id": "terminal_voice",
+      "name": "Terminal Voice",
+      "rate_wpm": 128,
+      "pitch": 35,
+      "amplitude": 150,
+      "espeak_voice": "en-us"
+    },
+    "music": {
+      "family": "restrained digital pulse",
+      "base_hz": 110,
+      "secondary_hz": 440,
+      "bed_db": -38,
+      "target_lufs": -16,
+      "true_peak_db": -1.5
+    },
+    "sfx": {
+      "default": "terminal_confirm",
+      "frequency_hz": 880
+    },
+    "provider_order": [
+      "imported",
+      "piper",
+      "elevenlabs",
+      "espeak"
+    ],
+    "language": "en",
+    "pronunciation_lexicon": [
+      {
+        "term": "sudo",
+        "spoken_form": "soo doo",
+        "source": "studio_pack",
+        "review_required": false
+      },
+      {
+        "term": "npm",
+        "spoken_form": "N P M",
+        "source": "studio_pack",
+        "review_required": false
+      }
+    ]
+  }
+}

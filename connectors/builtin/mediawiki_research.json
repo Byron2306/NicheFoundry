@@ -1,0 +1,26 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "mediawiki_research",
+    "name": "MediaWiki Research",
+    "version": "1.0.0",
+    "adapter": "mediawiki",
+    "description": "Retrieves revisioned encyclopaedic orientation sources through the MediaWiki Action API.",
+    "capabilities": ["research_sources", "topic_discovery"],
+    "auth": { "type": "none", "env": [] },
+    "default_source_tier": 3,
+    "default_source_type": "orientation_reference",
+    "default_config": {
+      "api_base": "https://en.wikipedia.org/w/api.php",
+      "publisher": "Wikipedia contributors",
+      "licence": "CC BY-SA 4.0",
+      "max_results": 10
+    },
+    "limits": { "max_items": 25, "timeout_ms": 15000, "attempts": 3 },
+    "trust": {
+      "can_satisfy_primary_source": false,
+      "content_completeness": "article_extract",
+      "notes": "Useful for orientation and terminology, but not a substitute for domain primary sources."
+    }
+  }
+}

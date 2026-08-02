@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-08-02T18:06:29.801Z",
+  "reference_audio": "assets/voices/elevenlabs_curator/reference.wav",
+  "reference_sha256": "4c82e4d25a0f682deeb5ad2a2ad6f04a93e192be67fa15aeaf60ae7be11b14d7",
+  "sample_count": 8,
+  "source_provider": "elevenlabs",
+  "consent_note": "Use only with voices you own, created, licensed, or have explicit permission to clone.",
+  "samples": [
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_4d5b2cb2ff01aa7c",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/02_scene_4d5b2cb2ff01aa7c.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/01_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_4d5b2cb2ff01aa7c.wav",
+      "duration_seconds": 71.67,
+      "sha256": "f2f423e09b52b9709188f00c90b967e2cb28da72162749a75588e053bfc5ea75"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_2986beda45272a6f",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/03_scene_2986beda45272a6f.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/02_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_2986beda45272a6f.wav",
+      "duration_seconds": 68.7,
+      "sha256": "e2d894ba0d8346878477ed8e7d601794139dce07696643b6e4707a3a7648a38d"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_fe3841a35401dda9",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/04_scene_fe3841a35401dda9.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/03_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_fe3841a35401dda9.wav",
+      "duration_seconds": 65.346,
+      "sha256": "d0aace5d64e8fe2dc0a8f127e758df17ddeaf7acf6219d4ecf1554d220f17b8d"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_3ddb78c52d29644d",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/07_scene_3ddb78c52d29644d.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/04_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_3ddb78c52d29644d.wav",
+      "duration_seconds": 59.192,
+      "sha256": "b0d961b100055995325673e69e8190f947fe6c26331265a7fd2a7ab4db3253f0"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_1f9795eb2f8cee1b",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/06_scene_1f9795eb2f8cee1b.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/05_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_1f9795eb2f8cee1b.wav",
+      "duration_seconds": 54.676,
+      "sha256": "cee88e5add4e00ccd6dcd364787c16b26466c158ebd95645100fb8a3ac87cc82"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-b89cda63",
+      "scene_id": "scene_1ca6234c3d048748",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-b89cda63/audio/narration/05_scene_1ca6234c3d048748.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/06_rosetta-stone-under-glass-2026-08-02-b89cda63_scene_1ca6234c3d048748.wav",
+      "duration_seconds": 53.898,
+      "sha256": "ee7723d4d12a43135894501fba6c1380e943f680ed38079d17a8868942669598"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-f479e4a4",
+      "scene_id": "scene_3ddb78c52d29644d",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-f479e4a4/audio/narration/07_scene_3ddb78c52d29644d.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/07_rosetta-stone-under-glass-2026-08-02-f479e4a4_scene_3ddb78c52d29644d.wav",
+      "duration_seconds": 53.726,
+      "sha256": "de2d35195a4ed69642751ec717a4173602d5ed6aa5347a6ba13fc7be1a6f3d64"
+    },
+    {
+      "episode": "rosetta-stone-under-glass-2026-08-02-2e99173e",
+      "scene_id": "scene_3ddb78c52d29644d",
+      "source": "episodes/rosetta-stone-under-glass-2026-08-02-2e99173e/audio/narration/07_scene_3ddb78c52d29644d.wav",
+      "sample": "assets/voices/elevenlabs_curator/samples/08_rosetta-stone-under-glass-2026-08-02-2e99173e_scene_3ddb78c52d29644d.wav",
+      "duration_seconds": 52.69,
+      "sha256": "251335ca4b92559b87c9a764c3513f923c66034813746da4ce19c8965c8f410b"
+    }
+  ]
+}

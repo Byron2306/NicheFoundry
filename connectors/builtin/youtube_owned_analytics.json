@@ -1,0 +1,29 @@
+{
+  "schema": "nichefoundry.connector.v1",
+  "connector": {
+    "id": "youtube_owned_analytics",
+    "name": "YouTube Owned-Channel Analytics",
+    "version": "1.0.0",
+    "adapter": "youtube_analytics",
+    "description": "Retrieves authorised performance reports for the operator's own YouTube channel.",
+    "capabilities": ["owned_analytics", "market_signals", "learning_loop"],
+    "auth": {
+      "type": "oauth2_refresh_token",
+      "env": ["YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN"]
+    },
+    "default_source_tier": 4,
+    "default_source_type": "owned_platform_analytics",
+    "default_config": {
+      "metrics": ["views", "estimatedMinutesWatched", "averageViewDuration", "subscribersGained"],
+      "dimensions": ["video"],
+      "lookback_days": 90,
+      "max_results": 200
+    },
+    "limits": { "max_items": 500, "timeout_ms": 15000, "attempts": 2 },
+    "trust": {
+      "can_satisfy_primary_source": false,
+      "content_completeness": "owned_metrics",
+      "notes": "Analytics guides channel decisions and must not be presented as factual evidence about the subject matter."
+    }
+  }
+}

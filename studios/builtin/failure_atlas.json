@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "studio": {
+    "id": "failure_atlas",
+    "name": "Failure Atlas",
+    "version": "1.2.0",
+    "tagline": "Reconstruct the hidden chain behind system failure.",
+    "domain": "engineering failures, overlooked design assumptions, infrastructure breakdowns, and evidence-led redesign lessons",
+    "description": "A specialist documentary studio that explains how complex systems fail without sensationalising harm or inventing blame."
+  },
+  "audience": {
+    "primary_age": "18-44",
+    "knowledge_level": "curious non-specialist with optional technical depth",
+    "motivations": [
+      "understand why engineered systems fail",
+      "see mechanisms and forces made visible",
+      "learn design and governance lessons from real cases"
+    ],
+    "viewer_jobs": [
+      "teach me how a failure unfolded",
+      "show me the hidden vulnerability",
+      "help me distinguish evidence from popular myth"
+    ],
+    "vocabulary": "plain-language engineering with defined technical terms",
+    "personas": [
+      {
+        "id": "curious_systems_viewer",
+        "name": "The Curious Systems Viewer",
+        "description": "A general viewer who loves understanding mechanisms and hidden failure chains without needing an engineering degree.",
+        "age_range": "18-44",
+        "knowledge_level": "curious non-specialist",
+        "motivations": [
+          "understand why systems fail",
+          "see mechanisms made visible",
+          "learn transferable design lessons"
+        ],
+        "frustrations": [
+          "sensational disaster coverage",
+          "jargon without explanation",
+          "blame without evidence"
+        ],
+        "viewing_context": [
+          "focused evening viewing",
+          "television or desktop",
+          "shared with technically curious friends"
+        ],
+        "desired_reward": "A satisfying causal reconstruction that makes a complex failure understandable.",
+        "likely_next_action": "Watch another failure-chain episode or save a diagram."
+      },
+      {
+        "id": "engineering_learner",
+        "name": "The Engineering Learner",
+        "description": "A student or early-career practitioner seeking memorable case studies and design principles.",
+        "age_range": "18-34",
+        "knowledge_level": "developing technical knowledge",
+        "motivations": [
+          "connect theory to real systems",
+          "learn investigation methods",
+          "collect case studies"
+        ],
+        "frustrations": [
+          "oversimplification",
+          "missing primary evidence",
+          "unclear terminology"
+        ],
+        "viewing_context": [
+          "study sessions",
+          "desktop viewing with notes",
+          "course or professional discussion"
+        ],
+        "desired_reward": "A credible case study with precise terminology and reusable lessons.",
+        "likely_next_action": "Download a case-study pack or continue to a mechanism explainer."
+      }
+    ],
+    "frustrations": [
+      "blame without evidence",
+      "jargon without explanation",
+      "missing primary evidence",
+      "oversimplification",
+      "sensational disaster coverage",
+      "unclear terminology"
+    ],
+    "viewing_context": [
+      "course or professional discussion",
+      "desktop viewing with notes",
+      "focused evening viewing",
+      "shared with technically curious friends",
+      "study sessions",
+      "television or desktop"
+    ],
+    "desired_reward": "A satisfying causal reconstruction that makes a complex failure understandable.",
+    "likely_next_action": "Watch another failure-chain episode or save a diagram."
+  },
+  "promise": {
+    "statement": "We reconstruct how engineered systems failed, what the evidence supports, and what designers learned.",
+    "required": [
+      "show normal operation before failure",
+      "separate initiating events from contributing conditions",
+      "distinguish documented findings from inference",
+      "end with transferable design or governance lessons"
+    ],
+    "prohibited": [
+      "disaster sensationalism",
+      "unsupported personal blame",
+      "graphic victim imagery",
+      "fabricated quotations or fake archival footage"
+    ]
+  },
+  "fit": {
+    "keywords": [
+      "failure",
+      "collapse",
+      "bridge",
+      "dam",
+      "aircraft",
+      "structure",
+      "engineering",
+      "design flaw",
+      "material fatigue",
+      "cascade",
+      "safety",
+      "investigation",
+      "infrastructure",
+      "mechanism",
+      "loads",
+      "maintenance",
+      "accident report",
+      "system breakdown"
+    ],
+    "negative_keywords": [
+      "installation tutorial",
+      "software setup",
+      "museum object biography",
+      "fashion review",
+      "celebrity gossip"
+    ],
+    "topic_examples": [
+      "Tacoma Narrows Bridge collapse",
+      "Hyatt Regency walkway failure",
+      "Mars Climate Orbiter unit conversion failure",
+      "Bhopal process safety breakdown",
+      "why brittle fracture sank Liberty ships"
+    ],
+    "minimum_score": 0.22
+  },
+  "research": {
+    "minimum_independent_sources": 2,
+    "primary_source_required": true,
+    "enforcement_stage": "pre_production",
+    "preferred_source_tiers": {
+      "tier_1": [
+        "official investigation reports",
+        "standards bodies",
+        "government inquiries",
+        "court findings and regulator records"
+      ],
+      "tier_2": [
+        "peer-reviewed engineering papers",
+        "university engineering publications",
+        "professional engineering institutions"
+      ],
+      "tier_3": [
+        "reputable specialist journalism",
+        "technical reference works",
+        "high-quality encyclopaedic orientation sources"
+      ]
+    },
+    "disallowed_sources": [
+      "anonymous listicles",
+      "unsourced social posts",
+      "AI-generated summaries without citations"
+    ],
+    "conflict_policy": "Represent major credible disagreements, identify the evidentiary basis of each, and avoid collapsing uncertainty into one dramatic claim.",
+    "freshness_days": null
+  },
+  "content": {
+    "default_archetype": "failure_chain",
+    "archetypes": [
+      {
+        "id": "failure_chain",
+        "name": "Failure Chain",
+        "description": "Reconstruct the progression from normal operation to hidden vulnerability, trigger, cascade, investigation, and lesson.",
+        "required_story_beats": [
+          "normal_operation",
+          "hidden_vulnerability",
+          "initiating_event",
+          "cascading_failure",
+          "investigation_findings",
+          "design_lesson"
+        ],
+        "hook_types": [
+          "visual anomaly",
+          "imminent failure",
+          "small decision with large consequence"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "diagram_carousel",
+          "audio"
+        ]
+      },
+      {
+        "id": "mechanism_explainer",
+        "name": "Mechanism Explainer",
+        "description": "Make one failure mechanism understandable through components, forces, sequence, and countermeasure.",
+        "required_story_beats": [
+          "mystery_or_symptom",
+          "system_components",
+          "force_or_process_path",
+          "failure_mechanism",
+          "evidence_demonstration",
+          "countermeasure"
+        ],
+        "hook_types": [
+          "surprising mechanism",
+          "scale comparison",
+          "visual contradiction"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "diagram_carousel"
+        ]
+      },
+      {
+        "id": "redesign_scenario",
+        "name": "Redesign Scenario",
+        "description": "Use documented lessons to compare the original design with plausible safer alternatives.",
+        "required_story_beats": [
+          "original_requirement",
+          "original_design_choice",
+          "constraint_or_tradeoff",
+          "observed_failure",
+          "redesign_options",
+          "recommended_principle"
+        ],
+        "hook_types": [
+          "what would you change",
+          "counterfactual redesign",
+          "hidden tradeoff"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "diagram_carousel"
+        ]
+      },
+      {
+        "id": "timeline_reconstruction",
+        "name": "Timeline Reconstruction",
+        "description": "Rebuild a failure from timestamped decisions, warnings, events, and responses.",
+        "required_story_beats": [
+          "baseline_conditions",
+          "early_warning",
+          "decision_point",
+          "critical_window",
+          "failure_event",
+          "post_event_inquiry"
+        ],
+        "hook_types": [
+          "countdown",
+          "missed warning",
+          "critical decision"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "timeline"
+        ]
+      }
+    ]
+  },
+  "visuals": {
+    "language": [
+      "cutaway diagrams",
+      "force arrows and load paths",
+      "restrained archival imagery",
+      "component highlights",
+      "causal timelines",
+      "before-and-after system states"
+    ],
+    "forbidden": [
+      "unrelated stock explosions",
+      "fake news broadcasts",
+      "realistic fabricated victims",
+      "red circles and arrows without analytical purpose"
+    ],
+    "motion_rules": [
+      "motion must reveal causality",
+      "camera movement must not obscure diagrams",
+      "failure sequences use controlled stepwise animation rather than spectacle"
+    ],
+    "palette": [
+      "graphite",
+      "steel",
+      "amber warning",
+      "cyan analysis",
+      "red only for verified failure state"
+    ]
+  },
+  "voice": {
+    "tone": "measured, investigative, technically curious, and respectful",
+    "pacing": "deliberate during mechanisms, faster during chronology, pause before causal conclusions",
+    "pronunciation_domains": [
+      "engineering names",
+      "materials",
+      "standards",
+      "place names"
+    ],
+    "forbidden_traits": [
+      "gleeful catastrophe",
+      "unsupported certainty",
+      "tabloid accusation"
+    ]
+  },
+  "compliance": {
+    "risk_level": "medium",
+    "human_fact_review": true,
+    "synthetic_reconstruction_disclosure": "required when a reconstruction could be mistaken for authentic footage",
+    "upload_default": "private",
+    "required_checks": [
+      "victim dignity review",
+      "blame attribution evidence",
+      "synthetic reconstruction disclosure",
+      "primary-source gap review",
+      "technical terminology review"
+    ]
+  },
+  "monetization": {
+    "paths": [
+      "sponsorships from engineering software or education providers",
+      "premium diagrams and case-study packs",
+      "members-only extended investigations",
+      "licensing explainers to education and training organisations"
+    ],
+    "prohibited_relationships": [
+      "sponsorship by a party directly implicated in an episode without prominent disclosure",
+      "paid conclusions"
+    ],
+    "trust_rules": [
+      "commercial relationships never alter causal findings",
+      "sponsors cannot preview or veto editorial conclusions"
+    ]
+  },
+  "metrics": {
+    "primary": [
+      "first 30-second retention",
+      "average percentage viewed",
+      "returning viewers",
+      "diagram rewatch rate"
+    ],
+    "guardrails": [
+      "correction rate",
+      "unsupported-claim findings",
+      "viewer reports of sensationalism",
+      "source coverage score"
+    ]
+  },
+  "samples": [
+    {
+      "working_title": "The Bridge That Twisted Itself Apart",
+      "topic": "Tacoma Narrows Bridge collapse and aeroelastic flutter",
+      "story_premise": "Reconstruct how an unusually flexible bridge moved from ordinary wind response to a destructive aeroelastic instability.",
+      "age_band": "13+",
+      "difficulty": "mixed",
+      "question_count": 6,
+      "countdown_seconds": 8,
+      "audience_mode": "general_family",
+      "contains_synthetic_media": true,
+      "source_mode": "wikipedia",
+      "source_queries": [
+        "Tacoma Narrows Bridge",
+        "Aeroelasticity",
+        "Suspension bridge"
+      ],
+      "visual_direction": "Steel-and-cyan cutaway diagrams, restrained archival framing, animated wind and torsion arrows.",
+      "studio_id": "failure_atlas",
+      "archetype_id": "failure_chain"
+    }
+  ],
+  "channel_strategy": {
+    "minimum_audience_fit_score": 62,
+    "promise_tests": [
+      "Does the episode separate trigger, contributing conditions, and consequences?",
+      "Can every blame-bearing statement be traced to evidence?",
+      "Does the ending deliver a transferable design or governance lesson?"
+    ],
+    "content_pillars": [
+      {
+        "id": "failure_reconstructions",
+        "name": "Failure Reconstructions",
+        "purpose": "Rebuild the causal chain from normal operation through trigger, cascade, and investigation.",
+        "keywords": [
+          "failure chain",
+          "collapse",
+          "incident",
+          "investigation",
+          "timeline",
+          "cascade"
+        ],
+        "archetypes": [
+          "failure_chain",
+          "timeline_reconstruction"
+        ],
+        "target_share": 0.45
+      },
+      {
+        "id": "mechanisms_and_forces",
+        "name": "Mechanisms and Forces",
+        "purpose": "Explain the physical or organisational mechanism that made failure possible.",
+        "keywords": [
+          "mechanism",
+          "force",
+          "load",
+          "fatigue",
+          "resonance",
+          "material",
+          "process"
+        ],
+        "archetypes": [
+          "mechanism_explainer"
+        ],
+        "target_share": 0.3
+      },
+      {
+        "id": "redesign_and_lessons",
+        "name": "Redesign and Lessons",
+        "purpose": "Translate documented findings into safer principles and plausible redesign choices.",
+        "keywords": [
+          "redesign",
+          "countermeasure",
+          "lesson",
+          "safety",
+          "tradeoff",
+          "standard"
+        ],
+        "archetypes": [
+          "redesign_scenario"
+        ],
+        "target_share": 0.25
+      }
+    ],
+    "portfolio_targets": {
+      "core_pillar": 0.5,
+      "search_evergreen": 0.2,
+      "experimental": 0.15,
+      "audience_request": 0.1,
+      "commercial_intent": 0.05
+    },
+    "format_rotation": {
+      "maximum_same_archetype_streak": 2,
+      "maximum_same_pillar_streak": 2,
+      "maximum_same_viewer_job_streak": 3,
+      "maximum_same_output_streak": 3,
+      "lookback_items": 8
+    }
+  },
+  "story_engine": {
+    "narrative_mode": "causal_reconstruction",
+    "default_target_minutes": 8,
+    "spoken_words_per_minute": 148,
+    "opening_rules": [
+      "Begin with a documented anomaly, mechanism, or consequential choice.",
+      "Separate visible failure from the longer causal chain."
+    ],
+    "retention_devices": [
+      "open causal question",
+      "mechanism reveal",
+      "sequence escalation",
+      "midpoint chain recap",
+      "investigation reversal",
+      "transferable lesson payoff"
+    ],
+    "closing_rules": [
+      "Return to the causal chain and state a transferable design or governance principle.",
+      "Avoid blame language unless directly supported by formal findings."
+    ],
+    "forbidden_phrases": [
+      "shocking disaster",
+      "terrifying collapse",
+      "you will not believe"
+    ],
+    "required_passes": [
+      "evidence",
+      "structure",
+      "audience",
+      "spoken_language",
+      "timing",
+      "originality",
+      "sensationalism"
+    ]
+  },
+  "visual_system": {
+    "name": "Failure Atlas Systems Cartography",
+    "motif": "technical_cutaway",
+    "texture": "engineering_grid",
+    "icon_style": "outlined_technical",
+    "diagram_style": "force_path",
+    "map_style": "infrastructure_schematic",
+    "compositions": [
+      "cutaway_left",
+      "load_path",
+      "causal_stack",
+      "investigation_board",
+      "system_vs_failure",
+      "design_principle"
+    ],
+    "thumbnail_compositions": [
+      "fracture_focus",
+      "system_vs_failure",
+      "single_component_warning"
+    ],
+    "identity": {
+      "colors": {
+        "background": "#071016",
+        "surface": "#111f29",
+        "panel": "#172a35",
+        "primary": "#dce8ee",
+        "muted": "#8fa4af",
+        "accent": "#45d5ff",
+        "secondary": "#f2a93b",
+        "danger": "#ed5a5a",
+        "grid": "#223846"
+      },
+      "typography": {
+        "display": "Rajdhani, Oxanium, sans-serif",
+        "body": "Inter, Arial, sans-serif",
+        "mono": "IBM Plex Mono, monospace"
+      }
+    },
+    "grid": {
+      "columns": 12,
+      "gutter_px": 28,
+      "margin_px": 96,
+      "baseline_px": 8
+    },
+    "safe_area": {
+      "title": 0.08,
+      "action": 0.05,
+      "captions_bottom": 0.16
+    },
+    "accessibility": {
+      "minimum_body_px_1080p": 34,
+      "minimum_caption_px_1080p": 42
+    }
+  },
+  "audio_system": {
+    "host": {
+      "id": "systems_investigator",
+      "name": "The Systems Investigator",
+      "rate_wpm": 148,
+      "pitch": 44,
+      "amplitude": 158,
+      "espeak_voice": "en-gb",
+      "energy": 0.46
+    },
+    "secondary_host": {
+      "id": "evidence_console",
+      "name": "Evidence Console",
+      "rate_wpm": 136,
+      "pitch": 38,
+      "amplitude": 148,
+      "espeak_voice": "en-sc"
+    },
+    "music": {
+      "family": "low mechanical pulse",
+      "base_hz": 82,
+      "secondary_hz": 123,
+      "bed_db": -34,
+      "target_lufs": -16,
+      "true_peak_db": -1.5
+    },
+    "sfx": {
+      "default": "mechanical_marker",
+      "frequency_hz": 220
+    },
+    "provider_order": [
+      "imported",
+      "piper",
+      "elevenlabs",
+      "espeak"
+    ],
+    "language": "en",
+    "pronunciation_lexicon": []
+  }
+}

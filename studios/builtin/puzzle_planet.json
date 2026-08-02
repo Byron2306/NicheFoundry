@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "studio": {
+    "id": "puzzle_planet",
+    "name": "Puzzle Planet",
+    "version": "1.2.0",
+    "tagline": "Evidence-led family adventures and knowledge challenges.",
+    "domain": "family-safe educational adventures, science and nature challenges, geography missions, and history discovery quizzes",
+    "description": "The original quiz-adventure studio retained as a compatibility pack while NicheFoundry expands into specialist documentary and tutorial formats.",
+    "status": "legacy_compatible"
+  },
+  "audience": {
+    "primary_age": "8-13 with family co-viewing",
+    "knowledge_level": "curious beginner",
+    "motivations": [
+      "learn through play",
+      "solve a mission",
+      "share a family challenge"
+    ],
+    "viewer_jobs": [
+      "teach me something surprising",
+      "let me test myself",
+      "give me a safe adventure"
+    ],
+    "vocabulary": "short concrete sentences with unfamiliar terms explained",
+    "personas": [
+      {
+        "id": "curious_child",
+        "name": "The Curious Young Explorer",
+        "description": "A child who enjoys missions, visible progress, and surprising facts explained clearly.",
+        "age_range": "8-13",
+        "knowledge_level": "curious beginner",
+        "motivations": [
+          "solve a mission",
+          "test knowledge",
+          "discover something surprising"
+        ],
+        "frustrations": [
+          "long explanations",
+          "unclear answers",
+          "scary or patronising presentation"
+        ],
+        "viewing_context": [
+          "family television",
+          "tablet viewing",
+          "classroom challenge"
+        ],
+        "desired_reward": "The excitement of solving a safe adventure while learning something real.",
+        "likely_next_action": "Play another mission or share the score with family."
+      },
+      {
+        "id": "family_co_viewer",
+        "name": "The Family Co-Viewer",
+        "description": "A parent, caregiver, or educator seeking safe, worthwhile shared viewing.",
+        "age_range": "adult co-viewer",
+        "knowledge_level": "mixed",
+        "motivations": [
+          "share a learning activity",
+          "trust the facts",
+          "keep children engaged"
+        ],
+        "frustrations": [
+          "empty stimulation",
+          "ambiguous questions",
+          "age-inappropriate sponsorship"
+        ],
+        "viewing_context": [
+          "shared television",
+          "classroom or home learning",
+          "weekend family activity"
+        ],
+        "desired_reward": "A safe, evidence-led activity that sparks discussion after the video.",
+        "likely_next_action": "Choose another themed mission or use a printable activity."
+      }
+    ],
+    "frustrations": [
+      "age-inappropriate sponsorship",
+      "ambiguous questions",
+      "empty stimulation",
+      "long explanations",
+      "scary or patronising presentation",
+      "unclear answers"
+    ],
+    "viewing_context": [
+      "classroom challenge",
+      "classroom or home learning",
+      "family television",
+      "shared television",
+      "tablet viewing",
+      "weekend family activity"
+    ],
+    "desired_reward": "The excitement of solving a safe adventure while learning something real.",
+    "likely_next_action": "Play another mission or share the score with family."
+  },
+  "promise": {
+    "statement": "We turn verified knowledge into family-safe adventures where every answer teaches something real.",
+    "required": [
+      "bind every answer to evidence",
+      "keep the mission connected to the topic",
+      "progress from accessible to challenging",
+      "explain every reveal"
+    ],
+    "prohibited": [
+      "workflow trivia",
+      "ambiguous correct answers",
+      "frightening imagery for young viewers",
+      "empty template repetition"
+    ]
+  },
+  "fit": {
+    "keywords": [
+      "quiz",
+      "challenge",
+      "adventure",
+      "science",
+      "nature",
+      "dinosaur",
+      "fossil",
+      "space",
+      "geography",
+      "history",
+      "animal",
+      "planet",
+      "mission",
+      "family",
+      "kids"
+    ],
+    "negative_keywords": [
+      "graphic disaster",
+      "advanced software installation",
+      "medical diagnosis",
+      "financial advice",
+      "true crime victims"
+    ],
+    "topic_examples": [
+      "escape dinosaur island",
+      "solar system rescue mission",
+      "wildlife survival challenge",
+      "ancient Egypt treasure trail",
+      "world geography expedition"
+    ],
+    "minimum_score": 0.15
+  },
+  "research": {
+    "minimum_independent_sources": 2,
+    "primary_source_required": false,
+    "enforcement_stage": "pre_production",
+    "preferred_source_tiers": {
+      "tier_1": [
+        "official science and museum resources",
+        "government education resources",
+        "primary historical collections"
+      ],
+      "tier_2": [
+        "peer-reviewed educational sources",
+        "university resources",
+        "reputable reference works"
+      ],
+      "tier_3": [
+        "high-quality encyclopaedic orientation sources",
+        "reputable educational journalism"
+      ]
+    },
+    "disallowed_sources": [
+      "unsourced trivia sites",
+      "content farms",
+      "AI-generated fact lists without citations"
+    ],
+    "conflict_policy": "Use established consensus for child-facing facts and clearly label uncertainty or scholarly disagreement.",
+    "freshness_days": null,
+    "independence_mode": "distinct_records"
+  },
+  "content": {
+    "default_archetype": "adventure_quiz",
+    "archetypes": [
+      {
+        "id": "adventure_quiz",
+        "name": "Adventure Quiz",
+        "description": "Connect evidence-bound questions to a mission with visible progress and educational reveals.",
+        "required_story_beats": [
+          "mission_setup",
+          "first_discovery",
+          "rising_challenge",
+          "midpoint_progress",
+          "final_challenge",
+          "mission_resolution"
+        ],
+        "hook_types": [
+          "mission emergency",
+          "mystery object",
+          "countdown challenge"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "printable_quiz"
+        ]
+      },
+      {
+        "id": "story_led_learning",
+        "name": "Story-led Learning",
+        "description": "Teach a concept through a character, problem, choices, consequences, and reflection.",
+        "required_story_beats": [
+          "character_and_goal",
+          "knowledge_problem",
+          "first_choice",
+          "consequence",
+          "better_choice",
+          "reflection_and_reward"
+        ],
+        "hook_types": [
+          "character problem",
+          "surprising consequence",
+          "help choose the path"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "activity_sheet"
+        ]
+      }
+    ]
+  },
+  "visuals": {
+    "language": [
+      "large readable game cards",
+      "illustrated environments",
+      "visible mission progress",
+      "animated countdowns",
+      "friendly diagrams"
+    ],
+    "forbidden": [
+      "internal production prompts",
+      "tiny text",
+      "static fake countdown labels",
+      "repetitive identical backgrounds"
+    ],
+    "motion_rules": [
+      "movement reinforces mission progress",
+      "countdowns show real elapsed time",
+      "reveals differ from questions"
+    ],
+    "palette": [
+      "deep space blue",
+      "adventure green",
+      "sunlit amber",
+      "white text"
+    ]
+  },
+  "voice": {
+    "tone": "warm, energetic, curious, and never patronising",
+    "pacing": "brisk during adventure, slower during explanations and choices",
+    "pronunciation_domains": [
+      "science terms",
+      "historical names",
+      "place names"
+    ],
+    "forbidden_traits": [
+      "baby talk",
+      "shouting every sentence",
+      "fake danger"
+    ]
+  },
+  "compliance": {
+    "risk_level": "low",
+    "human_fact_review": true,
+    "synthetic_reconstruction_disclosure": "required when generated realistic media could be mistaken for authentic footage",
+    "upload_default": "private",
+    "required_checks": [
+      "age suitability",
+      "audience classification",
+      "answer ambiguity",
+      "source support",
+      "synthetic media disclosure"
+    ]
+  },
+  "monetization": {
+    "paths": [
+      "family-safe sponsorships",
+      "printable learning packs",
+      "members-only challenges",
+      "educational licensing"
+    ],
+    "prohibited_relationships": [
+      "age-inappropriate sponsorship",
+      "paid answers or hidden product placement"
+    ],
+    "trust_rules": [
+      "sponsors do not determine correct answers",
+      "commercial material is clearly separated from learning content"
+    ]
+  },
+  "metrics": {
+    "primary": [
+      "completion rate",
+      "family returning viewers",
+      "answer participation",
+      "playlist continuation"
+    ],
+    "guardrails": [
+      "answer correction rate",
+      "age-suitability complaints",
+      "template similarity",
+      "unsupported fact findings"
+    ]
+  },
+  "samples": [
+    {
+      "working_title": "Escape Dinosaur Island",
+      "topic": "dinosaurs and fossils",
+      "story_premise": "Solve six evidence-backed questions to repair the time portal.",
+      "age_band": "8-13",
+      "difficulty": "mixed",
+      "question_count": 6,
+      "countdown_seconds": 8,
+      "audience_mode": "general_family",
+      "contains_synthetic_media": false,
+      "source_mode": "wikipedia",
+      "source_queries": [
+        "Dinosaur",
+        "Fossil",
+        "Tyrannosaurus"
+      ],
+      "visual_direction": "Cinematic family adventure with large readable game cards and real animated countdowns.",
+      "studio_id": "puzzle_planet",
+      "archetype_id": "adventure_quiz"
+    }
+  ],
+  "channel_strategy": {
+    "minimum_audience_fit_score": 58,
+    "promise_tests": [
+      "Does every answer teach a verified fact?",
+      "Is the mission meaningfully connected to the topic?",
+      "Is the language, imagery, and commercial context suitable for family co-viewing?"
+    ],
+    "content_pillars": [
+      {
+        "id": "science_adventures",
+        "name": "Science Adventures",
+        "purpose": "Turn science and nature knowledge into mission-led discovery and explanation.",
+        "keywords": [
+          "science",
+          "nature",
+          "animal",
+          "space",
+          "dinosaur",
+          "experiment"
+        ],
+        "archetypes": [
+          "adventure_quiz",
+          "story_led_learning"
+        ],
+        "target_share": 0.4
+      },
+      {
+        "id": "world_missions",
+        "name": "World Missions",
+        "purpose": "Explore geography, places, maps, and cultures through safe challenges.",
+        "keywords": [
+          "geography",
+          "map",
+          "country",
+          "ocean",
+          "mountain",
+          "world"
+        ],
+        "archetypes": [
+          "adventure_quiz"
+        ],
+        "target_share": 0.3
+      },
+      {
+        "id": "history_discovery",
+        "name": "History Discovery",
+        "purpose": "Introduce people, objects, and moments from history through accessible missions.",
+        "keywords": [
+          "history",
+          "ancient",
+          "museum",
+          "artefact",
+          "civilization"
+        ],
+        "archetypes": [
+          "adventure_quiz",
+          "story_led_learning"
+        ],
+        "target_share": 0.3
+      }
+    ],
+    "portfolio_targets": {
+      "core_pillar": 0.5,
+      "search_evergreen": 0.2,
+      "experimental": 0.15,
+      "audience_request": 0.1,
+      "commercial_intent": 0.05
+    },
+    "format_rotation": {
+      "maximum_same_archetype_streak": 3,
+      "maximum_same_pillar_streak": 2,
+      "maximum_same_viewer_job_streak": 3,
+      "maximum_same_output_streak": 3,
+      "lookback_items": 8
+    }
+  },
+  "story_engine": {
+    "narrative_mode": "interactive_adventure",
+    "default_target_minutes": 6,
+    "spoken_words_per_minute": 154,
+    "opening_rules": [
+      "Give the viewer a clear mission and fair rules.",
+      "Connect every challenge to a verified learning goal."
+    ],
+    "retention_devices": [
+      "mission emergency",
+      "first discovery reward",
+      "rising challenge",
+      "midpoint progress",
+      "final challenge",
+      "mission resolution"
+    ],
+    "closing_rules": [
+      "Celebrate evidence used, not only the score.",
+      "End with a safe invitation to continue learning or replay."
+    ],
+    "forbidden_phrases": [
+      "only geniuses can solve",
+      "you failed",
+      "scariest challenge ever"
+    ],
+    "required_passes": [
+      "evidence",
+      "structure",
+      "audience",
+      "spoken_language",
+      "timing",
+      "originality",
+      "sensationalism"
+    ]
+  },
+  "visual_system": {
+    "name": "Puzzle Planet Mission Atlas",
+    "motif": "mission_map",
+    "texture": "star_chart",
+    "icon_style": "friendly_adventure",
+    "diagram_style": "illustrated_learning",
+    "map_style": "expedition_map",
+    "compositions": [
+      "mission_map",
+      "challenge_portal",
+      "evidence_fieldbook",
+      "victory_path",
+      "choice_gate",
+      "mission_emergency"
+    ],
+    "thumbnail_compositions": [
+      "mission_emergency",
+      "discovery_reveal",
+      "choice_gate"
+    ],
+    "identity": {
+      "colors": {
+        "background": "#071629",
+        "surface": "#102b46",
+        "panel": "#f4fbff",
+        "primary": "#ffffff",
+        "muted": "#9ec7d8",
+        "accent": "#62e88a",
+        "secondary": "#ffc64a",
+        "danger": "#ff6b66",
+        "grid": "#1e4b68"
+      },
+      "typography": {
+        "display": "Fredoka, Nunito, sans-serif",
+        "body": "Nunito, Arial, sans-serif",
+        "mono": "IBM Plex Mono, monospace"
+      }
+    },
+    "grid": {
+      "columns": 12,
+      "gutter_px": 30,
+      "margin_px": 92,
+      "baseline_px": 8
+    },
+    "safe_area": {
+      "title": 0.08,
+      "action": 0.055,
+      "captions_bottom": 0.18
+    },
+    "accessibility": {
+      "minimum_body_px_1080p": 38,
+      "minimum_caption_px_1080p": 46
+    }
+  },
+  "audio_system": {
+    "host": {
+      "id": "expedition_guide",
+      "name": "The Expedition Guide",
+      "rate_wpm": 166,
+      "pitch": 58,
+      "amplitude": 168,
+      "espeak_voice": "en-us",
+      "energy": 0.68
+    },
+    "secondary_host": {
+      "id": "mission_computer",
+      "name": "Mission Computer",
+      "rate_wpm": 145,
+      "pitch": 64,
+      "amplitude": 160,
+      "espeak_voice": "en-us"
+    },
+    "music": {
+      "family": "bright expedition pulse",
+      "base_hz": 164,
+      "secondary_hz": 329,
+      "bed_db": -32,
+      "target_lufs": -16,
+      "true_peak_db": -1.5
+    },
+    "sfx": {
+      "default": "mission_ping",
+      "frequency_hz": 988
+    },
+    "provider_order": [
+      "imported",
+      "piper",
+      "elevenlabs",
+      "espeak"
+    ],
+    "language": "en",
+    "pronunciation_lexicon": []
+  }
+}

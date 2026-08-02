@@ -1,0 +1,590 @@
+{
+  "schema_version": "1.0",
+  "studio": {
+    "id": "history_under_glass",
+    "name": "History Under Glass",
+    "version": "1.2.0",
+    "tagline": "Read the past through the things people left behind.",
+    "domain": "historical artefacts, ordinary objects, material culture, museum evidence, and the lives reconstructed around surviving things",
+    "description": "A material-history studio that starts with an object and carefully expands outward into people, place, chronology, and contested interpretation."
+  },
+  "audience": {
+    "primary_age": "16-54",
+    "knowledge_level": "curious general audience and history learners",
+    "motivations": [
+      "discover overlooked human stories",
+      "understand how historians infer from objects",
+      "see familiar artefacts in a richer social context"
+    ],
+    "viewer_jobs": [
+      "tell me what this object reveals",
+      "show me how evidence supports the reconstruction",
+      "help me understand competing historical interpretations"
+    ],
+    "vocabulary": "accessible historical prose with period terms explained in context",
+    "personas": [
+      {
+        "id": "object_story_explorer",
+        "name": "The Object-Story Explorer",
+        "description": "A curious viewer drawn to ordinary objects that unlock larger human stories.",
+        "age_range": "16-54",
+        "knowledge_level": "general history audience",
+        "motivations": [
+          "discover overlooked lives",
+          "understand material evidence",
+          "experience the past through concrete things"
+        ],
+        "frustrations": [
+          "great-man-only history",
+          "invented certainty",
+          "dates without human context"
+        ],
+        "viewing_context": [
+          "television or tablet",
+          "museum-trip preparation",
+          "relaxed but attentive viewing"
+        ],
+        "desired_reward": "A vivid human story anchored in a real surviving object.",
+        "likely_next_action": "Explore another object biography or visit a linked collection."
+      },
+      {
+        "id": "history_learner",
+        "name": "The Evidence-Minded History Learner",
+        "description": "A learner or educator interested in how historians move from evidence to interpretation.",
+        "age_range": "16-40",
+        "knowledge_level": "student or informed enthusiast",
+        "motivations": [
+          "learn source interpretation",
+          "compare historical arguments",
+          "use examples in teaching"
+        ],
+        "frustrations": [
+          "presentism",
+          "unlabelled reconstruction",
+          "single-source certainty"
+        ],
+        "viewing_context": [
+          "class preparation",
+          "desktop note-taking",
+          "shared educational viewing"
+        ],
+        "desired_reward": "A clear distinction between evidence, inference, and disputed interpretation.",
+        "likely_next_action": "Open the source sheet or continue to a historical case file."
+      }
+    ],
+    "frustrations": [
+      "dates without human context",
+      "great-man-only history",
+      "invented certainty",
+      "presentism",
+      "single-source certainty",
+      "unlabelled reconstruction"
+    ],
+    "viewing_context": [
+      "class preparation",
+      "desktop note-taking",
+      "museum-trip preparation",
+      "relaxed but attentive viewing",
+      "shared educational viewing",
+      "television or tablet"
+    ],
+    "desired_reward": "A vivid human story anchored in a real surviving object.",
+    "likely_next_action": "Explore another object biography or visit a linked collection."
+  },
+  "promise": {
+    "statement": "We use objects, documents, and material evidence to reconstruct past lives without pretending uncertainty has disappeared.",
+    "required": [
+      "begin with a specific object or evidence cluster",
+      "locate it in time and place",
+      "distinguish direct evidence from historical inference",
+      "include ordinary people and material conditions where evidence permits"
+    ],
+    "prohibited": [
+      "invented dialogue presented as fact",
+      "presentism without explanation",
+      "nationalist mythmaking",
+      "unlabelled colourisation or synthetic archival imagery"
+    ]
+  },
+  "fit": {
+    "keywords": [
+      "artefact",
+      "artifact",
+      "museum",
+      "archaeology",
+      "material culture",
+      "inscription",
+      "manuscript",
+      "coin",
+      "pottery",
+      "tool",
+      "clothing",
+      "map",
+      "relic",
+      "excavation",
+      "archive",
+      "historical object",
+      "trade route",
+      "daily life",
+      "ancient",
+      "medieval"
+    ],
+    "negative_keywords": [
+      "software install",
+      "engineering collapse",
+      "product benchmark",
+      "breaking celebrity news",
+      "medical advice"
+    ],
+    "topic_examples": [
+      "what a Roman soldier's shoe reveals about frontier life",
+      "the voyage of a medieval trade coin",
+      "reading domestic life through Pompeian graffiti",
+      "how shipwreck cargo reconstructs an ancient economy",
+      "the hidden history of a Victorian mourning dress"
+    ],
+    "minimum_score": 0.2
+  },
+  "research": {
+    "minimum_independent_sources": 2,
+    "primary_source_required": true,
+    "enforcement_stage": "pre_production",
+    "preferred_source_tiers": {
+      "tier_1": [
+        "museum catalogue records",
+        "digitised primary documents",
+        "archaeological excavation reports",
+        "official archive descriptions"
+      ],
+      "tier_2": [
+        "peer-reviewed history and archaeology",
+        "university press scholarship",
+        "scholarly exhibition catalogues"
+      ],
+      "tier_3": [
+        "reputable heritage organisations",
+        "specialist historical journalism",
+        "high-quality encyclopaedic orientation sources"
+      ]
+    },
+    "disallowed_sources": [
+      "unsourced quotation websites",
+      "viral history accounts without references",
+      "AI-generated historical anecdotes without provenance"
+    ],
+    "conflict_policy": "Name credible interpretations, explain which evidence supports each, and preserve unresolved uncertainty in the narration.",
+    "freshness_days": null
+  },
+  "content": {
+    "default_archetype": "object_biography",
+    "archetypes": [
+      {
+        "id": "object_biography",
+        "name": "Object Biography",
+        "description": "Follow an artefact from creation and use through survival, discovery, interpretation, and present meaning.",
+        "required_story_beats": [
+          "object_reveal",
+          "materials_and_making",
+          "original_use",
+          "human_context",
+          "survival_or_discovery",
+          "historical_meaning"
+        ],
+        "hook_types": [
+          "object contradiction",
+          "ordinary object extraordinary story",
+          "unanswered inscription"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "image_carousel",
+          "audio"
+        ]
+      },
+      {
+        "id": "historical_case_file",
+        "name": "Historical Case File",
+        "description": "Assemble several evidence fragments to investigate one bounded historical question.",
+        "required_story_beats": [
+          "historical_question",
+          "context_and_chronology",
+          "evidence_exhibit_one",
+          "evidence_exhibit_two",
+          "competing_interpretations",
+          "reasoned_conclusion"
+        ],
+        "hook_types": [
+          "unanswered question",
+          "contradictory evidence",
+          "missing piece"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "source_sheet"
+        ]
+      },
+      {
+        "id": "map_journey",
+        "name": "Map Journey",
+        "description": "Trace an object, person, or commodity through changing places and relationships.",
+        "required_story_beats": [
+          "point_of_origin",
+          "route_and_barriers",
+          "exchange_or_transformation",
+          "arrival_context",
+          "evidence_of_movement",
+          "historical_implication"
+        ],
+        "hook_types": [
+          "unexpected journey",
+          "scale comparison",
+          "map reveal"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "animated_map"
+        ]
+      },
+      {
+        "id": "myth_audit",
+        "name": "Myth Audit",
+        "description": "Test a popular historical claim against its origin, evidence, counterevidence, and later reuse.",
+        "required_story_beats": [
+          "popular_claim",
+          "claim_origin",
+          "supporting_evidence",
+          "counterevidence",
+          "historian_interpretations",
+          "qualified_verdict"
+        ],
+        "hook_types": [
+          "popular claim challenged",
+          "source contradiction",
+          "why the myth survives"
+        ],
+        "allowed_outputs": [
+          "long_form",
+          "short",
+          "source_sheet"
+        ]
+      }
+    ]
+  },
+  "visuals": {
+    "language": [
+      "high-resolution object details",
+      "archival documents with readable callouts",
+      "period maps",
+      "material and construction diagrams",
+      "chronology ribbons",
+      "museum-label restraint"
+    ],
+    "forbidden": [
+      "synthetic faces presented as historical portraits",
+      "unlabelled colourised archival images",
+      "random castle stock footage",
+      "decorative maps without evidentiary purpose"
+    ],
+    "motion_rules": [
+      "camera movement follows physical evidence",
+      "maps animate routes rather than merely glowing",
+      "document excerpts remain on screen long enough to read"
+    ],
+    "palette": [
+      "charcoal",
+      "parchment",
+      "oxidised bronze",
+      "museum white",
+      "deep burgundy"
+    ]
+  },
+  "voice": {
+    "tone": "curious, humane, interpretive, and quietly cinematic",
+    "pacing": "measured around evidence, brisk through chronology, reflective at interpretation points",
+    "pronunciation_domains": [
+      "historical names",
+      "place names",
+      "dead languages",
+      "museum terminology"
+    ],
+    "forbidden_traits": [
+      "present-day moral grandstanding without context",
+      "romanticised certainty",
+      "invented intimacy"
+    ]
+  },
+  "compliance": {
+    "risk_level": "medium",
+    "human_fact_review": true,
+    "synthetic_reconstruction_disclosure": "required for generated reconstructions, colourisation, or recreated voices",
+    "upload_default": "private",
+    "required_checks": [
+      "primary versus secondary source distinction",
+      "cultural property and image rights",
+      "synthetic archival disclosure",
+      "contested interpretation review",
+      "anachronism review"
+    ]
+  },
+  "monetization": {
+    "paths": [
+      "museum and heritage sponsorships",
+      "premium source sheets and teaching packs",
+      "members-only object dossiers",
+      "licensed educational adaptations"
+    ],
+    "prohibited_relationships": [
+      "sponsorship that requires a predetermined historical conclusion",
+      "unlabelled promotion of private antiquities sales"
+    ],
+    "trust_rules": [
+      "commercial partners cannot rewrite interpretations",
+      "ownership and repatriation disputes are disclosed where relevant"
+    ]
+  },
+  "metrics": {
+    "primary": [
+      "average percentage viewed",
+      "returning viewers",
+      "saves and playlist continuation",
+      "source-sheet downloads"
+    ],
+    "guardrails": [
+      "historical correction rate",
+      "rights or provenance issues",
+      "unlabelled reconstruction findings",
+      "interpretive-balance review"
+    ]
+  },
+  "samples": [
+    {
+      "working_title": "The Shoe at the Edge of the Roman World",
+      "topic": "Roman footwear from Vindolanda and what it reveals about frontier life",
+      "story_premise": "Begin with one preserved shoe, then reconstruct the people, labour, trade, and climate around a Roman frontier fort.",
+      "age_band": "13+",
+      "difficulty": "mixed",
+      "question_count": 6,
+      "countdown_seconds": 8,
+      "audience_mode": "general_family",
+      "contains_synthetic_media": false,
+      "source_mode": "wikipedia",
+      "source_queries": [
+        "Vindolanda tablets",
+        "Caligae",
+        "Vindolanda"
+      ],
+      "visual_direction": "Museum-dark macro photography, parchment maps, leather construction diagrams, restrained chronology ribbon.",
+      "studio_id": "history_under_glass",
+      "archetype_id": "object_biography"
+    }
+  ],
+  "channel_strategy": {
+    "minimum_audience_fit_score": 60,
+    "promise_tests": [
+      "Does a specific object or evidence cluster anchor the episode?",
+      "Are direct evidence and historical inference clearly separated?",
+      "Does the episode illuminate ordinary people and material conditions where evidence permits?"
+    ],
+    "content_pillars": [
+      {
+        "id": "object_biographies",
+        "name": "Object Biographies",
+        "purpose": "Follow artefacts from making and use through survival, discovery, and present meaning.",
+        "keywords": [
+          "artefact",
+          "object",
+          "material",
+          "making",
+          "use",
+          "museum",
+          "discovery"
+        ],
+        "archetypes": [
+          "object_biography"
+        ],
+        "target_share": 0.4
+      },
+      {
+        "id": "evidence_case_files",
+        "name": "Evidence Case Files",
+        "purpose": "Investigate bounded historical questions through multiple evidence exhibits and interpretations.",
+        "keywords": [
+          "case file",
+          "evidence",
+          "document",
+          "interpretation",
+          "mystery",
+          "archive"
+        ],
+        "archetypes": [
+          "historical_case_file",
+          "myth_audit"
+        ],
+        "target_share": 0.35
+      },
+      {
+        "id": "routes_and_exchange",
+        "name": "Routes and Exchange",
+        "purpose": "Map the movement of objects, people, technologies, and ideas through place and time.",
+        "keywords": [
+          "route",
+          "trade",
+          "map",
+          "journey",
+          "exchange",
+          "migration",
+          "provenance"
+        ],
+        "archetypes": [
+          "map_journey"
+        ],
+        "target_share": 0.25
+      }
+    ],
+    "portfolio_targets": {
+      "core_pillar": 0.5,
+      "search_evergreen": 0.2,
+      "experimental": 0.15,
+      "audience_request": 0.1,
+      "commercial_intent": 0.05
+    },
+    "format_rotation": {
+      "maximum_same_archetype_streak": 2,
+      "maximum_same_pillar_streak": 2,
+      "maximum_same_viewer_job_streak": 3,
+      "maximum_same_output_streak": 3,
+      "lookback_items": 8
+    }
+  },
+  "story_engine": {
+    "narrative_mode": "evidence_investigation",
+    "default_target_minutes": 8,
+    "spoken_words_per_minute": 144,
+    "opening_rules": [
+      "Begin with an object, exhibit, map, or disputed claim.",
+      "Frame a historical question that the surviving evidence can genuinely address."
+    ],
+    "retention_devices": [
+      "unanswered evidence question",
+      "second exhibit",
+      "source contradiction",
+      "chronology reveal",
+      "interpretive fork",
+      "qualified verdict"
+    ],
+    "closing_rules": [
+      "Distinguish what the evidence establishes, suggests, and cannot settle.",
+      "Explain why the interpretation matters without presentist certainty."
+    ],
+    "forbidden_phrases": [
+      "history proves once and for all",
+      "the truth historians hide",
+      "mysterious ancient secret"
+    ],
+    "required_passes": [
+      "evidence",
+      "structure",
+      "audience",
+      "spoken_language",
+      "timing",
+      "originality",
+      "sensationalism"
+    ]
+  },
+  "visual_system": {
+    "name": "History Under Glass Museum Editorial",
+    "motif": "museum_vitrine",
+    "texture": "archival_paper",
+    "icon_style": "engraved_museum",
+    "diagram_style": "material_exhibit",
+    "map_style": "period_atlas",
+    "compositions": [
+      "object_vitrine",
+      "document_exhibit",
+      "route_map",
+      "chronology_ribbon",
+      "competing_exhibits",
+      "museum_label_verdict"
+    ],
+    "thumbnail_compositions": [
+      "object_macro",
+      "artifact_question",
+      "evidence_pair"
+    ],
+    "identity": {
+      "colors": {
+        "background": "#120f0d",
+        "surface": "#211a16",
+        "panel": "#eee2c9",
+        "primary": "#fff8e8",
+        "muted": "#bfae91",
+        "accent": "#b8894f",
+        "secondary": "#7a2439",
+        "danger": "#9f4438",
+        "grid": "#4a3b2f"
+      },
+      "typography": {
+        "display": "Cormorant Garamond, Georgia, serif",
+        "body": "Source Sans 3, Arial, sans-serif",
+        "mono": "IBM Plex Mono, monospace"
+      }
+    },
+    "grid": {
+      "columns": 10,
+      "gutter_px": 32,
+      "margin_px": 104,
+      "baseline_px": 8
+    },
+    "safe_area": {
+      "title": 0.08,
+      "action": 0.05,
+      "captions_bottom": 0.16
+    },
+    "accessibility": {
+      "minimum_body_px_1080p": 36,
+      "minimum_caption_px_1080p": 42
+    }
+  },
+  "audio_system": {
+    "host": {
+      "id": "curator",
+      "name": "The Curator",
+      "rate_wpm": 142,
+      "pitch": 49,
+      "amplitude": 154,
+      "espeak_voice": "en-gb",
+      "energy": 0.39
+    },
+    "secondary_host": {
+      "id": "archive_voice",
+      "name": "Archive Voice",
+      "rate_wpm": 132,
+      "pitch": 42,
+      "amplitude": 146,
+      "espeak_voice": "en-uk-north"
+    },
+    "music": {
+      "family": "museum chamber texture",
+      "base_hz": 196,
+      "secondary_hz": 293,
+      "bed_db": -36,
+      "target_lufs": -16,
+      "true_peak_db": -1.5
+    },
+    "sfx": {
+      "default": "archive_chime",
+      "frequency_hz": 523
+    },
+    "provider_order": [
+      "imported",
+      "piper",
+      "elevenlabs",
+      "espeak"
+    ],
+    "language": "en",
+    "pronunciation_lexicon": []
+  }
+}
