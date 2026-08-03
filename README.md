@@ -1,5 +1,9 @@
 # NicheFoundry
 
+<p align="center">
+  <img src="ChatGPT Image Aug 3, 2026, 12_30_06 PM.png" width="620" style="max-width: 92%; height: auto;">
+</p>
+
 NicheFoundry is a local-first faceless YouTube production system.
 
 It takes a topic from research to a governed production pipeline that can:
