@@ -1,0 +1,34 @@
+name: NicheFoundry Media Transform Gauntlet
+
+on:
+  push:
+    branches:
+      - agent/media-transformation-studio
+  pull_request:
+    paths:
+      - "lib/media_transform.js"
+      - "scripts/media_transform.js"
+      - "tests/media_transform.test.js"
+      - "package.json"
+      - ".github/workflows/media-transform.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  media-transform:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax check
+        run: |
+          node --check lib/media_transform.js
+          node --check scripts/media_transform.js
+      - name: Run transformation tests
+        run: npm run verify:media-transform
