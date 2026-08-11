@@ -1,0 +1,14 @@
+{
+  "kind": "image",
+  "input": "incoming/source.png",
+  "output": "exports/source-social.webp",
+  "operations": {
+    "width": 1080,
+    "height": 1080,
+    "fit": "contain",
+    "quality": 86,
+    "rotate": 0,
+    "flip": "none",
+    "strip_metadata": true
+  }
+}
