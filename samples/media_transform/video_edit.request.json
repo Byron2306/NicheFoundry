@@ -1,0 +1,25 @@
+{
+  "kind": "video",
+  "inputs": [
+    "incoming/clip-01.mp4",
+    "incoming/clip-02.mp4"
+  ],
+  "output": "exports/combined-vertical.mp4",
+  "operations": {
+    "width": 1080,
+    "height": 1920,
+    "fit": "cover",
+    "fps": 30,
+    "volume": 0.9,
+    "subtitles": "incoming/captions.srt",
+    "burn_subtitles": true,
+    "overlay_image": "incoming/logo.png",
+    "overlay_position": "top_right",
+    "overlay_margin": 32,
+    "video_codec": "libx264",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "preset": "medium",
+    "crf": 20
+  }
+}
