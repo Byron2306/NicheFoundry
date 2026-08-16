@@ -22,9 +22,20 @@ fi
   torch==2.4.1+cpu
 "$VENV/bin/python" -m pip install \
   "kokoro>=0.9.4" \
+  "transformers==4.51.3" \
   soundfile \
   "numpy<2" \
   --extra-index-url https://download.pytorch.org/whl/cpu
+
+"$VENV/bin/python" - <<'PY'
+import torch
+import transformers
+from kokoro import KPipeline
+
+assert tuple(int(part) for part in torch.__version__.split("+")[0].split(".")[:2]) == (2, 4), torch.__version__
+assert transformers.__version__ == "4.51.3", transformers.__version__
+print(f"Kokoro import preflight passed: torch={torch.__version__} transformers={transformers.__version__}")
+PY
 
 cat <<MSG
 Kokoro runtime installed.
