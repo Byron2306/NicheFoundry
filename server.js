@@ -2687,20 +2687,42 @@ function youtubeCredentialStatus() {
     configured: hasStaticAccess || hasRefresh,
     mode: hasStaticAccess ? 'static_access_token' : hasRefresh ? 'oauth_refresh_token' : 'missing',
     required_environment: hasStaticAccess ? ['YOUTUBE_ACCESS_TOKEN'] : ['YOUTUBE_CLIENT_ID', 'YOUTUBE_REFRESH_TOKEN'],
-    optional_environment: ['YOUTUBE_CLIENT_SECRET'],
+    optional_environment: ['YOUTUBE_CLIENT_SECRET', 'YOUTUBE_CHANNEL_ID'],
+    expected_channel_id: process.env.YOUTUBE_CHANNEL_ID || null,
+    channel_lock_configured: Boolean(process.env.YOUTUBE_CHANNEL_ID),
     missing: hasStaticAccess || hasRefresh ? [] : ['YOUTUBE_CLIENT_ID', 'YOUTUBE_REFRESH_TOKEN'],
     values_redacted: true
   };
 }
 
-async function acquireYouTubeAccessToken() {
-  if (process.env.YOUTUBE_ACCESS_TOKEN) return { access_token: process.env.YOUTUBE_ACCESS_TOKEN, source: 'static_access_token', acquired_at: nowIso() };
-  const refreshed = await refreshAccessToken({
-    clientId: process.env.YOUTUBE_CLIENT_ID,
-    clientSecret: process.env.YOUTUBE_CLIENT_SECRET || '',
-    refreshToken: process.env.YOUTUBE_REFRESH_TOKEN
+async function verifyYouTubeChannel(accessToken) {
+  const expectedChannelId = process.env.YOUTUBE_CHANNEL_ID;
+  const response = await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
+    headers: { Authorization: `Bearer ${accessToken}` }
   });
-  return { ...refreshed, source: 'oauth_refresh_token' };
+  const payload = await response.json();
+  if (!response.ok) throw new Error(payload.error?.message || 'YouTube channel verification failed.');
+  const channels = payload.items || [];
+  const channel = expectedChannelId
+    ? channels.find((item) => item.id === expectedChannelId)
+    : channels[0];
+  if (!channel) {
+    const actual = channels.map((item) => `${item.snippet?.title || 'Untitled'} (${item.id})`).join(', ') || 'none';
+    throw new Error(`YouTube channel lock refused publishing. Expected ${expectedChannelId}; authorised ${actual}.`);
+  }
+  return { channel_id: channel.id, channel_title: channel.snippet?.title || null };
+}
+
+async function acquireYouTubeAccessToken() {
+  const token = process.env.YOUTUBE_ACCESS_TOKEN
+    ? { access_token: process.env.YOUTUBE_ACCESS_TOKEN, source: 'static_access_token', acquired_at: nowIso() }
+    : { ...(await refreshAccessToken({
+        clientId: process.env.YOUTUBE_CLIENT_ID,
+        clientSecret: process.env.YOUTUBE_CLIENT_SECRET || '',
+        refreshToken: process.env.YOUTUBE_REFRESH_TOKEN
+      })), source: 'oauth_refresh_token' };
+  const channel = await verifyYouTubeChannel(token.access_token);
+  return { ...token, ...channel };
 }
 
 function metadataOverridesFromPackage(metadata = {}) {

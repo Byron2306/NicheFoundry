@@ -4,6 +4,7 @@ const { spawn } = require('child_process');
 
 const clientId = process.env.YOUTUBE_CLIENT_ID;
 const clientSecret = process.env.YOUTUBE_CLIENT_SECRET;
+const expectedChannelId = process.env.YOUTUBE_CHANNEL_ID || '';
 if (!clientId || !clientSecret) {
   console.error('Set YOUTUBE_CLIENT_ID and YOUTUBE_CLIENT_SECRET before running this script.');
   process.exit(1);
@@ -59,9 +60,25 @@ const server = http.createServer(async (request, response) => {
     if (!tokenResponse.ok || !token.refresh_token) {
       throw new Error(token.error_description || token.error || 'Google did not return a refresh token. Revoke the prior grant and run again with consent.');
     }
+    const channelResponse = await fetch('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
+      headers: { Authorization: `Bearer ${token.access_token}` }
+    });
+    const channelPayload = await channelResponse.json();
+    if (!channelResponse.ok) {
+      throw new Error(channelPayload.error?.message || 'YouTube channel verification failed.');
+    }
+    const channels = channelPayload.items || [];
+    const authorisedChannel = expectedChannelId
+      ? channels.find((channel) => channel.id === expectedChannelId)
+      : channels[0];
+    if (!authorisedChannel) {
+      const actual = channels.map((channel) => `${channel.snippet?.title || 'Untitled'} (${channel.id})`).join(', ') || 'none';
+      throw new Error(`Wrong YouTube channel authorised. Expected ${expectedChannelId}; received ${actual}. Switch to the intended channel and run setup again.`);
+    }
     response.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-    response.end('NicheFoundry YouTube authorization completed. You may close this tab.');
+    response.end(`NicheFoundry YouTube authorization completed for ${authorisedChannel.snippet?.title || authorisedChannel.id}. You may close this tab.`);
     console.log('\nAuthorization complete. Add this value to your private .env file:');
+    console.log(`Authorised channel: ${authorisedChannel.snippet?.title || 'Untitled'} (${authorisedChannel.id})`);
     console.log(`YOUTUBE_REFRESH_TOKEN=${token.refresh_token}`);
     console.log('\nDo not commit or share that token. The connector runtime exchanges it for short-lived access tokens.');
     server.close();
@@ -83,7 +100,7 @@ server.listen(0, '127.0.0.1', () => {
     response_type: 'code',
     scope: scopes.join(' '),
     access_type: 'offline',
-    prompt: 'consent',
+    prompt: 'select_account consent',
     code_challenge: challenge,
     code_challenge_method: 'S256',
     state

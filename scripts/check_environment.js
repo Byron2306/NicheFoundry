@@ -99,6 +99,8 @@ const report = {
   publishing: {
     youtube_credentials_configured: Boolean(process.env.YOUTUBE_ACCESS_TOKEN || (process.env.YOUTUBE_CLIENT_ID && process.env.YOUTUBE_REFRESH_TOKEN)),
     credential_mode: process.env.YOUTUBE_ACCESS_TOKEN ? "static_access_token" : (process.env.YOUTUBE_CLIENT_ID && process.env.YOUTUBE_REFRESH_TOKEN) ? "oauth_refresh_token" : "missing",
+    expected_channel_id: process.env.YOUTUBE_CHANNEL_ID || null,
+    channel_lock_configured: Boolean(process.env.YOUTUBE_CHANNEL_ID),
     initial_privacy: "private",
     resumable_upload: true,
     processing_poll: true,

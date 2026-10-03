@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "studio": {
+    "id": "dio_proof_led_services",
+    "name": "DIO Proof-Led Services",
+    "version": "1.0.0",
+    "tagline": "Inspect the work before you trust the promise.",
+    "domain": "proof-led workflow services for South African educators researchers NGOs and evidence teams",
+    "description": "Commercial stories built from real DIO artefacts, explicit human approval and bounded pilot offers."
+  },
+  "audience": {
+    "primary_age": "24-65",
+    "knowledge_level": "working professional evaluating a service provider",
+    "motivations": ["reduce repetitive professional workload", "inspect quality before committing budget", "retain authority over final outputs"],
+    "viewer_jobs": ["show me a real before-and-after case", "explain what I submit and receive", "prove where human review remains"],
+    "vocabulary": "plain professional language grounded in assessments evidence review and delivery",
+    "personas": [
+      {
+        "id": "education_workload_owner",
+        "name": "Education Workload Owner",
+        "description": "An educator, lecturer or academic manager responsible for assessment quality and turnaround.",
+        "age_range": "25-65",
+        "knowledge_level": "experienced education professional",
+        "motivations": ["recover preparation time", "protect assessment quality", "retain educator approval"],
+        "frustrations": ["generic generated questions", "manual formatting", "unverifiable curriculum claims"],
+        "viewing_context": ["desktop planning", "staff discussion", "mobile discovery"],
+        "desired_reward": "A bounded pilot whose finished artefact can be inspected before adoption.",
+        "likely_next_action": "Review a sample pack or nominate one assessment brief."
+      },
+      {
+        "id": "evidence_accountability_owner",
+        "name": "Evidence Accountability Owner",
+        "description": "An NGO, research or programme professional who must turn scattered records into defensible evidence.",
+        "age_range": "25-60",
+        "knowledge_level": "experienced programme or evidence professional",
+        "motivations": ["meet reporting obligations", "preserve provenance", "reduce evidence collation time"],
+        "frustrations": ["scattered files", "unsupported claims", "late reporting scrambles"],
+        "viewing_context": ["desktop review", "funder preparation", "team evaluation"],
+        "desired_reward": "A review-ready evidence pack with traceable claims and a visible approval boundary.",
+        "likely_next_action": "Inspect the golden case or nominate one bounded evidence period."
+      }
+    ]
+  },
+  "promise": {
+    "statement": "Every offer is demonstrated with a real artefact, a visible workflow, an explicit human approval boundary and a bounded next step.",
+    "required": ["open with the finished proof artefact", "show realistic inputs and outputs", "state the human approval boundary", "use one attributable call to action", "separate demonstrated capability from future claims"],
+    "prohibited": ["guaranteed outcomes", "fabricated testimonials or metrics", "generic AI imagery replacing product proof", "prospect personalisation without permission", "hidden manual review"]
+  },
+  "fit": {
+    "keywords": ["proof-led", "workflow service", "assessment pack", "exam paper", "marking support", "educator review", "evidence pack", "mapped claims", "provenance", "human approval", "bounded pilot", "CAPS aligned", "NGO reporting", "delivery receipt", "before and after", "review-ready", "professional control", "audit evidence", "teacher workload"],
+    "negative_keywords": ["guaranteed pass", "replace teachers", "automatic sales email", "fake testimonial", "get rich quick"],
+    "topic_examples": ["show a CAPS-aligned assessment pack from brief to educator approval", "turn scattered NGO reporting records into a provenance-backed evidence pack", "compare messy assessment inputs with a review-ready exam and memorandum", "demonstrate claim mapping and human approval in an evidence workflow", "run a bounded proof-led pilot without replacing professional judgement"],
+    "minimum_score": 0.22
+  },
+  "research": {
+    "minimum_independent_sources": 2,
+    "primary_source_required": true,
+    "enforcement_stage": "pre_production",
+    "preferred_source_tiers": {
+      "tier_1": ["actual DIO proof artefacts", "CAPS source documents", "operator receipts", "approved golden cases"],
+      "tier_2": ["public institutional requirements", "product telemetry", "professional review notes"],
+      "tier_3": ["sector reports", "public professional guidance", "permission-safe market observations"]
+    },
+    "disallowed_sources": ["invented customer outcomes", "private prospect records in public creative", "unreviewed generated statistics"],
+    "conflict_policy": "Prefer inspected product artefacts and authoritative source documents; label demonstrations estimates and hypotheses separately.",
+    "freshness_days": 180
+  },
+  "content": {
+    "default_archetype": "proof_case",
+    "archetypes": [
+      {
+        "id": "proof_case",
+        "name": "Proof Case",
+        "description": "Move from recognisable workload through real artefact, workflow, approval and bounded pilot.",
+        "required_story_beats": ["finished_proof", "workload_context", "input_state", "transformation", "human_review", "delivered_output", "bounded_cta"],
+        "hook_types": ["finished artefact first", "messy input to reviewed output", "inspectable workload result"],
+        "allowed_outputs": ["short", "long_form", "article", "professional_post", "landing_page"]
+      },
+      {
+        "id": "workflow_walkthrough",
+        "name": "Workflow Walkthrough",
+        "description": "Show what enters the service, what the system does, what the professional reviews and what is delivered.",
+        "required_story_beats": ["input_contract", "processing_steps", "quality_checks", "human_authority", "delivery_contents", "measurement"],
+        "hook_types": ["what you send and receive", "inside the workflow", "approval gate revealed"],
+        "allowed_outputs": ["long_form", "short", "workflow_diagram", "article"]
+      },
+      {
+        "id": "proof_comparison",
+        "name": "Proof Comparison",
+        "description": "Compare an unmanaged starting state with the reviewed product artefact using declared criteria.",
+        "required_story_beats": ["starting_state", "comparison_criteria", "finished_state", "traceability_check", "limitations", "pilot_decision"],
+        "hook_types": ["before and after", "inspect the difference", "proof against criteria"],
+        "allowed_outputs": ["short", "comparison_table", "article", "landing_page"]
+      }
+    ]
+  },
+  "visuals": {
+    "language": ["real document and pack close-ups", "legible before-and-after comparisons", "workflow state transitions", "highlighted provenance and approval marks", "restrained professional typography", "one dominant artefact per frame"],
+    "forbidden": ["generic AI brains or robots", "template slide decoration", "unreadable document thumbnails", "private identifying data", "invented dashboards presented as telemetry"],
+    "motion_rules": ["hold proof long enough to inspect", "use movement to reveal workflow state", "keep source text and labels readable", "show approval as a deliberate action"],
+    "palette": ["paper white", "charcoal ink", "evidence blue", "approval green", "measured amber"]
+  },
+  "voice": {
+    "tone": "direct, proof-led, professionally confident and candid about boundaries",
+    "pacing": "fast at the pain point, deliberate while inspecting proof, concise at the call to action",
+    "pronunciation_domains": ["South African curriculum terms", "assessment terminology", "evidence and provenance terminology"],
+    "forbidden_traits": ["hype without proof", "fake certainty", "belittling professional work", "opaque AI jargon"]
+  },
+  "compliance": {
+    "risk_level": "medium",
+    "human_fact_review": true,
+    "synthetic_reconstruction_disclosure": "required whenever a generated scene could be mistaken for a real client case",
+    "upload_default": "private",
+    "required_checks": ["proof artefact exists", "private data redacted", "claims match capability", "human approval boundary visible", "outreach permission checked separately", "publication approved"]
+  },
+  "monetization": {
+    "paths": ["bounded paid pilots", "fixed-scope service packs", "institutional workflow partnerships", "repeat fulfilment retainers"],
+    "prohibited_relationships": ["undisclosed endorsements", "pay-to-claim educational authority", "guaranteed performance claims"],
+    "trust_rules": ["proof precedes price escalation", "human review is never hidden", "campaign attribution reaches job telemetry", "sales permission is independent of market priority"]
+  },
+  "metrics": {
+    "primary": ["qualified pilot enquiries", "paid pilot conversion", "gross contribution", "repeat orders", "proof asset engagement"],
+    "guardrails": ["permission failures", "unapproved publication", "revision burden", "refunds", "manual minutes per delivery"]
+  },
+  "channel_strategy": {
+    "minimum_audience_fit_score": 70,
+    "promise_tests": ["Can a viewer inspect real work?", "Is the professional approval boundary unmistakable?", "Is the next action bounded and attributable?"],
+    "content_pillars": [
+      {"id": "assessment_proof", "name": "Assessment Proof", "target_share": 0.4, "keywords": ["assessment", "exam", "CAPS", "marking"], "archetypes": ["proof_case", "workflow_walkthrough"]},
+      {"id": "evidence_proof", "name": "Evidence Proof", "target_share": 0.35, "keywords": ["evidence", "provenance", "claims", "reporting"], "archetypes": ["proof_case", "proof_comparison"]},
+      {"id": "operator_control", "name": "Operator Control", "target_share": 0.25, "keywords": ["review", "approval", "quality", "delivery"], "archetypes": ["workflow_walkthrough", "proof_comparison"]}
+    ]
+  },
+  "samples": [
+    {"working_title": "Inspect a CAPS assessment pack before commissioning one", "topic": "CAPS-aligned assessment pack with educator approval", "story_premise": "Show the finished paper memo and validation receipt before the workflow.", "source_queries": ["HOMS FET tight 8 release"]},
+    {"working_title": "From scattered records to a review-ready evidence pack", "topic": "evidence pack claim mapping and provenance", "story_premise": "Open with the golden case and trace one claim back to its source.", "source_queries": ["Evidex golden case"]}
+  ]
+}
